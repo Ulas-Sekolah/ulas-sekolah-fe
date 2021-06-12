@@ -3,8 +3,8 @@ import Layout from '../components/Layout'
 
 export default function Home() {
   return (
-    <Layout title="Rating Sekolah">
-      <h1 className="font-bold text-5xl text-blue-600 ">Hello Next JS</h1>
+    <Layout title="Rating Sekolah | FAQ">
+      <h1 className="font-bold text-5xl text-blue-600 ">FAQ</h1>
     </Layout>
   )
 }
