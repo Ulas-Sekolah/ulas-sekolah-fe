@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 
 export default function Home() {
   return (
-    <Layout title="Rating Sekolah | FAQ">
+    <Layout title={`${process.env.appName} | FAQ`}>
       <h1 className="font-bold text-5xl text-blue-600 ">FAQ</h1>
     </Layout>
   )
