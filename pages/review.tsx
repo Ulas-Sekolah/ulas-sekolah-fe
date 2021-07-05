@@ -1,10 +1,11 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import Review from '../containers/pages/Review'
 
 export default function Home() {
   return (
     <Layout title={`${process.env.appName} | Review Sekolah`}>
-      <h1 className="font-bold text-5xl text-blue-600 ">Review</h1>
+      <Review />
     </Layout>
   )
 }
