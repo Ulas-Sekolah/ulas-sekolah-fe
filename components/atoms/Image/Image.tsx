@@ -3,8 +3,8 @@ import React from 'react'
 interface PropImageTypes {
   src: any
   alt: string
-  height: string
-  width: string
+  height?: string
+  width?: string
   classWarp?: string
   classImage?: string
 }
