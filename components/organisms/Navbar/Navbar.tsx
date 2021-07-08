@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Switch from '../../atoms/Switch/Switch'
+import { Switch } from '../../atoms'
 
 export default function Navbar(): any {
   const router = useRouter()
@@ -29,8 +29,8 @@ export default function Navbar(): any {
       </div>
       <div>
         <ul className="flex">
-          {(menu || []).map((item, idx) => (
-            <li key={idx} className={`mr-10 ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
+          {(menu || []).map((item, idx, arr) => (
+            <li key={idx} className={`${arr.length - 1 === idx ? '' : 'mr-10'} ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
               {item.name !== 'switch-btn' ?
                 <Link href={item.name}>
                   {item.displayName}
