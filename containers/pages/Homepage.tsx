@@ -2,6 +2,37 @@ import React from 'react'
 import { Button, Image, Input } from '../../components/atoms'
 import { Navbar } from '../../components/organisms'
 
+let staticSchool: any[] = [{
+  id: 1,
+  name: 'SMK Negri 26 Jakarta',
+  address: 'Jl. Balai Pustaka Baru I, Rawamangun',
+  imageUrl: require('../../assets/images/images-review/school1.png'),
+}, {
+  id: 2,
+  name: '',
+  address: '',
+  imageUrl: require('../../assets/images/images-review/school2.png'),
+}, {
+  id: 3,
+  name: '',
+  address: '',
+  imageUrl: require('../../assets/images/images-review/school3.png'),
+}, {
+  id: 4,
+  name: '',
+  address: '',
+  imageUrl: require('../../assets/images/images-review/school4.png'),
+}, {
+  id: 5,
+  name: '',
+  address: '',
+  imageUrl: require('../../assets/images/images-review/school5.png'),
+}, {
+  id: 6,
+  name: '',
+  address: '',
+  imageUrl: require('../../assets/images/images-review/school6.png'),
+}]
 class Homepage extends React.Component {
   render() {
     return (
@@ -84,6 +115,19 @@ class Homepage extends React.Component {
               <Image src={require('../../assets/images/facilities.png')} alt="Rating" width="400px" classWarp="absolute z-10 rounded-xl mr-8 right-0 shadow-xl" classImage="shadow-xl rounded-lg" />
               <div className="absolute bg-gray-200 rounded-lg w-400 h-268 transform mr-8 right-0 -rotate-12" />
               <div className="absolute bg-gray-100 rounded-lg w-400 h-268 transform mr-8 right-0 -rotate-6" />
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-96">
+          <div className="mx-24">
+            <h1 className="text-5xl font-semibold leading-snug text-primary text-center">Sekolah paling banyak diulas</h1>
+            <div className="grid grid-cols-3 gap-0.5 m-28">
+              {(staticSchool || []).map((dataSchool) => (
+                <div key={dataSchool.id}>
+                  <Image src={dataSchool.imageUrl} alt="Image School"  width="395" height="345"/>
+                </div>
+              ))}
             </div>
           </div>
         </section>
