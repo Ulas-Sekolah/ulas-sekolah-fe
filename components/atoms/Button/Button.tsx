@@ -2,20 +2,20 @@ import React from 'react'
 
 interface PropButtonTypes {
   dataText?: string
-  classWarp?: string
+  classWrap?: string
   classButton?: string
   children: JSX.Element|JSX.Element[]
 }
 
 export default function Button({
-  classWarp,
+  classWrap,
   classButton,
   children,
   dataText,
 }: PropButtonTypes): any {
   return (
     <React.Fragment>
-      <div className={classWarp}>
+      <div className={classWrap}>
         <button type="submit" data-text={dataText} className={classButton}>{children}</button>
       </div>
     </React.Fragment>

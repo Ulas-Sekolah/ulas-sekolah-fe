@@ -5,7 +5,7 @@ interface PropImageTypes {
   alt: string
   height?: string
   width?: string
-  classWarp?: string
+  classWrap?: string
   classImage?: string
 }
 
@@ -14,12 +14,12 @@ export default function Image({
   alt,
   height,
   width,
-  classWarp,
+  classWrap,
   classImage,
 }: PropImageTypes): any {
   return (
     <React.Fragment>
-      <div className={classWarp}>
+      <div className={classWrap}>
         <img src={src} alt={alt} className={classImage} height={height} width={width} />
       </div>
     </React.Fragment>
