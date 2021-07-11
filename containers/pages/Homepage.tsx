@@ -41,22 +41,105 @@ class Homepage extends React.Component {
           <div className="bg-white mx-24 mt-5 shadow-sm rounded-full py-3 px-10 justify-between flex">
             <Navbar />
           </div>
-          <div className="grid grid-cols-2 gap-20 mx-24 mt-36">
+          <div className="
+            mx-10 hp:mx-10 laptop:mx-24
+            mt-12 hp:mt-12 laptop:mt-36
+            gap-10 hp:gap-10 laptop:gap-20
+            grid grid-cols-1 hp:grid-cols-1 laptop:grid-cols-2
+          ">
             <div className="mb-36">
-              <h1 className="text-6xl font-semibold leading-snug text-primary">Jelajahi semua sekolah di Indonesia</h1>
-              <p className="text-lg font-extralight leading-relaxed mt-7 tracking-wider text-primary">Cari sekolah yang kamu minati dan<br />dapatkan info rating, jurusan, ekskul dan fasilitas<br />sekolah favoritmu.</p>
-              <div className="shadow-sm w-full rounded-full h-14 mt-10 bg-white pl-10 pr-2.5 relative grid-cols-12 grid gap-4 items-center">
-                <Image src={require('../../assets/icons/message.svg')} alt="Message Image" height="20px" width="20px" classWrap="col-start-1 col-end-2 animate-pulse" />
-                <Input type="text" classWrap="col-start-2 col-end-10" classInput="h-14 focus:outline-none font-extralight w-full" placeholder="Masukan emailmu" />
+              <h1 className="
+                leading-snug
+                text-primary
+                font-semibold
+                text-3xl hp:text-3xl tablet:text-4xl laptop:text-6xl
+                text-center hp:text-center tablet:text-center laptop:text-left
+              ">
+                Jelajahi semua sekolah di Indonesia
+              </h1>
+              <p className="
+                text-primary
+                tracking-wider
+                font-extralight
+                leading-relaxed
+                mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
+                text-sm hp:text-sm tablet:text-md laptop:text-lg
+                text-center hp:text-center tablet:text-center laptop:text-left
+              ">
+                Cari sekolah yang kamu minati dan<br />dapatkan info rating, jurusan, ekskul dan fasilitas<br />sekolah favoritmu.
+              </p>
+              <div className="
+                grid
+                pr-2.5
+                bg-white
+                relative
+                shadow-sm
+                rounded-full
+                grid-cols-12
+                items-center
+                h-10 laptop:h-14
+                pl-5 laptop:pl-10
+                gap-2 tablet:gap-4
+                m-auto tablet: m-0
+                hp:w-full tablet:w-3/4 laptop:w-full
+                mt-5 hp:mt-5 tablet:mt-7 laptop:mt-10
+              ">
+                <Image
+                  src={require('../../assets/icons/message.svg')}
+                  alt="Message Image"
+                  classWrap="
+                    w-4 lg:w-5
+                    h-4 lg:h-5
+                    col-end-2
+                    col-start-1
+                    animate-pulse
+                  "
+                />
+                <Input
+                  type="text"
+                  classWrap="
+                    col-start-2
+                    col-end-10
+                  "
+                  classInput="
+                    w-full
+                    h-10 laptop:h-14
+                    font-extralight
+                    focus:outline-none
+                    text-xs tablet:text-md laptop:text-lg
+                  "
+                  placeholder="Masukan emailmu"
+                />
                 <Button
-                  classWrap="transition duration-300 col-start-10 col-end-13 rounded-full bg-primary h-10 w-full hover:ring-4 ring-gray-400"
-                  classButton="focus:outline-none text-white text-center h-10 w-full text-lg font-medium"
+                  classWrap="
+                    w-full
+                    transition
+                    col-end-13
+                    bg-primary
+                    h-7 lg:h-10
+                    duration-300
+                    col-start-10
+                    rounded-full
+                    hover:ring-4 ring-gray-400
+                  "
+                  classButton="
+                    w-full
+                    text-white
+                    text-center
+                    h-7 laptop:h-10
+                    font-medium
+                    focus:outline-none
+                    text-xs hp:text-xs tablet:text-sm laptop:text-lg
+                  "
                 >
                   <span>Ulasan</span>
                 </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="
+              relative
+              hp:hidden laptop:block
+            ">
               <div className="absolute border-blue-100 border-2 h-96 w-60 right-0 rounded" />
               <Image src={require('../../assets/images/banner-header.png')} alt="banner" width="600" height="700" classImage="absolute p-10 right-0" />
             </div>
@@ -131,6 +214,7 @@ class Homepage extends React.Component {
             </div>
           </div>
         </section>
+         
         <Footer />
       </React.Fragment>
     )

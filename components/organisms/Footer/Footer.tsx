@@ -4,7 +4,7 @@ import { Button, Image } from '../../../components/atoms'
 
 export default function Footer() {
   return (
-    <section className="my-96 w-100 bg-gray">
+    <footer className="my-96 w-100 bg-gray">
       <div>
         <SubHeading classText=''>Rating Sekolah</SubHeading>
         <Text>Kami hadir menciptakan fitur untuk memudahkan anak bangsa mencari sekolah favoritnya berdasarkan rating, jurusan, ekskul dan fasilitas sekolah. (selangkapnya...)</Text>
@@ -29,6 +29,6 @@ export default function Footer() {
         <Image src={require('../../../assets/images/appstore.png')} alt="banner"  classImage="" />
         <Text>Kamu alumni sekolah mana?</Text>
       </div>
-    </section>
+    </footer>
   )
 }

@@ -22,14 +22,20 @@ module.exports = {
         'gray': '#F7FAFC',
         'blue-100': '#D4EFF6',
        }),
-       width: {
+      screens: {
+        'hp': '0',
+        'tablet': '640px',
+        'laptop': '1024px',
+        'desktop': '1280px',
+      },
+      width: {
         '400': '400px',
-       },
-       height: {
+      },
+      height: {
         '268': '268px',
         '292': '292px',
         '296': '296px',
-       }
+      }
     },
   },
   variants: {
