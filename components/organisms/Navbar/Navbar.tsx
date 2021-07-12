@@ -24,13 +24,22 @@ export default function Navbar(): any {
   }]
 
   return (
-    <nav className={`bg-white mx-24 mt-5 shadow-sm py-3 px-10 justify-between flex ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`}>
+    <nav className={`
+      flex
+      bg-white
+      shadow-sm
+      py-3 px-10
+      justify-between
+      mx-10 hp:mx-10 laptop:mx-24
+      mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
+      ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`
+    }>
       <div className="relative flex flex-wrap items-center justify-between bg-teal-500 w-full">
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div className="md:container md:px-4 md:mx-auto w-full flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a
               className="text-sm font-semibold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-primary"
-              href="#pablo"
+              href="/"
             >
               Rating Sekolah
             </a>

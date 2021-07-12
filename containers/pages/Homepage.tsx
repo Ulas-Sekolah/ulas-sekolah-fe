@@ -50,6 +50,8 @@ class Homepage extends React.Component {
                 leading-snug
                 text-primary
                 font-semibold
+                m-auto tablet: m-0
+                tablet:w-3/4 laptop:w-full
                 text-3xl hp:text-3xl tablet:text-4xl laptop:text-6xl
                 text-center hp:text-center tablet:text-center laptop:text-left
               ">
@@ -60,6 +62,8 @@ class Homepage extends React.Component {
                 tracking-wider
                 font-extralight
                 leading-relaxed
+                m-auto tablet: m-0
+                tablet:w-3/4 laptop:w-full
                 mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
                 text-sm hp:text-sm tablet:text-md laptop:text-lg
                 text-center hp:text-center tablet:text-center laptop:text-left
@@ -79,7 +83,7 @@ class Homepage extends React.Component {
                 pl-5 laptop:pl-10
                 gap-2 tablet:gap-4
                 m-auto tablet: m-0
-                hp:w-full tablet:w-3/4 laptop:w-full
+                tablet:w-3/4 laptop:w-full
                 mt-5 hp:mt-5 tablet:mt-7 laptop:mt-10
               ">
                 <Image
@@ -144,7 +148,7 @@ class Homepage extends React.Component {
           </div>
         </header>
 
-        <section className="mt-96">
+        {/* <section className="mt-96">
           <div className="grid grid-cols-2 gap-20 mx-24">
             <div className="relative">
               <Image src={require('../../assets/images/rating-school.png')} alt="Rating" width="400px" classWrap="absolute z-10 rounded-xl ml-8 shadow-xl" classImage="shadow-xl rounded-lg" />
@@ -213,7 +217,7 @@ class Homepage extends React.Component {
           </div>
         </section>
          
-        <Footer />
+        <Footer /> */}
       </React.Fragment>
     )
   }
