@@ -38,16 +38,14 @@ class Homepage extends React.Component {
     return (
       <React.Fragment>
         <header className="bg-gray rounded m-3 py-4">
-          <div className="bg-white mx-24 mt-5 shadow-sm rounded-full py-3 px-10 justify-between flex">
-            <Navbar />
-          </div>
+          <Navbar />
           <div className="
             mx-10 hp:mx-10 laptop:mx-24
             mt-12 hp:mt-12 laptop:mt-36
             gap-10 hp:gap-10 laptop:gap-20
             grid grid-cols-1 hp:grid-cols-1 laptop:grid-cols-2
           ">
-            <div className="mb-36">
+            <div className="hp:mb-20 laptop:mb-48">
               <h1 className="
                 leading-snug
                 text-primary
