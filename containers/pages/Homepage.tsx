@@ -148,66 +148,256 @@ class Homepage extends React.Component {
           </div>
         </header>
 
-        {/* <section className="mt-96">
-          <div className="grid grid-cols-2 gap-20 mx-24">
+        <section className="
+          mt-24 tablet:mt-48 laptop:mt-96
+        ">
+          <div className="
+            grid
+            hp:gap-10 table:gap-20
+            mx-10 hp:mx-10 laptop:mx-24
+            grid-cols-1 tablet:grid-cols-2
+          ">
             <div className="relative">
-              <Image src={require('../../assets/images/rating-school.png')} alt="Rating" width="400px" classWrap="absolute z-10 rounded-xl ml-8 shadow-xl" classImage="shadow-xl rounded-lg" />
-              <div className="absolute bg-gray-200 rounded-lg w-400 h-292 transform rotate-12 ml-8" />
-              <div className="absolute bg-gray-100 rounded-lg w-400 h-292 transform rotate-6 ml-8" />
+              <Image
+                src={require('../../assets/images/rating-school.png')}
+                alt="Rating"
+                width="400px"
+                classWrap="
+                  laptop:absolute
+                  z-10
+                  rounded-xl
+                  laptop:ml-8
+                  laptop:shadow-xl
+                "
+                classImage="
+                  shadow-xl
+                  rounded-lg
+                  hp:mx-auto
+                "
+              />
+              <div className="absolute bg-gray-200 rounded-lg w-400 h-292 transform rotate-12 ml-8 hidden tablet:hidden laptop:block" />
+              <div className="absolute bg-gray-100 rounded-lg w-400 h-292 transform rotate-6 ml-8 hidden tablet:hidden laptop:block" />
             </div>
             <div>
-              <h1 className="text-5xl font-semibold leading-snug text-primary">Mengetahui Rating<br />Sekolah dengan mudah</h1>
-              <p className="text-lg font-extralight leading-relaxed mt-7 tracking-wider text-primary">Kamu bingung memilih sekolah untuk melanjutkan<br />studi kamu?<br />Dengan Rating Sekolah, kamu dapat mengetahui sekolah terbaik untuk kamu berdasarkan pengalaman dari alumni atau siswa di sekolah tersebut.</p>
+              <h1 className="
+                leading-snug
+                text-primary
+                font-semibold
+                hp:mt-10 tablet:mt-0
+                text-center tablet:text-left
+                text-3xl tablet:text-2xl laptop:text-4xl
+              ">
+                Mengetahui Rating<br />Sekolah dengan mudah
+              </h1>
+              <p className="
+                mt-7
+                font-extralight
+                leading-relaxed
+                text-primary
+                tracking-wider
+                text-center tablet:text-left
+                text-sm tablet:text-md laptop:text-lg
+              ">
+                Kamu bingung memilih sekolah untuk melanjutkan<br />studi kamu?<br />Dengan Rating Sekolah, kamu dapat mengetahui sekolah terbaik untuk kamu berdasarkan pengalaman dari alumni atau siswa di sekolah tersebut.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="mt-96">
-          <div className="grid grid-cols-2 gap-20 mx-24">
-            <div>
-              <h1 className="text-5xl font-semibold leading-snug text-primary">Mencari jurusan sesuai dengan passionmu</h1>
-              <p className="text-lg font-extralight leading-relaxed mt-7 tracking-wider text-primary">Cari sekolah favorit terbaik di Indonesia untuk<br />jurusan favoritmu dengan mudah dengan menggunakan<br />Rating Sekolah.</p>
+        <section className="
+          mt-24 tablet:mt-48 laptop:mt-96
+        ">
+          <div className="
+            grid
+            hp:gap-10 table:gap-20
+            mx-10 hp:mx-10 laptop:mx-24
+            grid-cols-1 tablet:grid-cols-2
+            tablet:flex tablet:flex-row-reverse
+            justify-between
+          ">
+            <div className="relative laptop:w-2/4">
+              <Image
+                src={require('../../assets/images/your-passion.png')}
+                alt="Rating"
+                width="400px"
+                classWrap="
+                  laptop:absolute
+                  z-10
+                  rounded-xl
+                  right-0
+                  laptop:mr-8
+                  laptop:w-400
+                  laptop:shadow-xl
+                "
+                classImage="
+                  shadow-xl
+                  rounded-lg
+                  hp:mx-auto
+                "
+              />
+              <div className="absolute bg-gray-200 rounded-lg w-400 h-296 transform mr-8 right-0 -rotate-12 hidden tablet:hidden laptop:block" />
+              <div className="absolute bg-gray-100 rounded-lg w-400 h-296 transform mr-8 right-0 -rotate-6 hidden tablet:hidden laptop:block" />
             </div>
-            <div className="relative">
-              <Image src={require('../../assets/images/your-passion.png')} alt="Rating" width="400px" classWrap="absolute z-10 rounded-xl mr-8 right-0 shadow-xl" classImage="shadow-xl rounded-lg" />
-              <div className="absolute bg-gray-200 rounded-lg w-400 h-296 transform mr-8 right-0 -rotate-12" />
-              <div className="absolute bg-gray-100 rounded-lg w-400 h-296 transform mr-8 right-0 -rotate-6" />
+            <div className="laptop:w-2/4">
+              <h1 className="
+                leading-snug
+                text-primary
+                font-semibold
+                hp:mt-10 tablet:mt-0
+                text-center tablet:text-left
+                text-3xl tablet:text-2xl laptop:text-4xl
+              ">
+                Mencari jurusan sesuai dengan passionmu
+              </h1>
+              <p className="
+                mt-7
+                font-extralight
+                leading-relaxed
+                text-primary
+                tracking-wider
+                text-center tablet:text-left
+                text-sm tablet:text-md laptop:text-lg
+              ">
+                Cari sekolah favorit terbaik di Indonesia untuk<br />jurusan favoritmu dengan mudah dengan menggunakan<br />
+                Rating Sekolah.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="mt-96">
-          <div className="grid grid-cols-2 gap-20 mx-24">
+        <section className="
+          mt-24 tablet:mt-48 laptop:mt-96
+        ">
+          <div className="
+            grid
+            hp:gap-10 table:gap-20
+            mx-10 hp:mx-10 laptop:mx-24
+            grid-cols-1 tablet:grid-cols-2
+            justify-between
+          ">
             <div className="relative">
-              <Image src={require('../../assets/images/your-extracurricular.png')} alt="Rating" width="400px" classWrap="absolute z-10 rounded-xl ml-8 shadow-xl" classImage="shadow-xl rounded-lg" />
-              <div className="absolute bg-gray-200 rounded-lg w-400 h-268 transform rotate-12 ml-8" />
-              <div className="absolute bg-gray-100 rounded-lg w-400 h-268 transform rotate-6 ml-8" />
+              <Image
+                src={require('../../assets/images/your-extracurricular.png')}
+                alt="Rating" width="400px"
+                classWrap="
+                  laptop:absolute
+                  z-10
+                  rounded-xl
+                  laptop:ml-8
+                  laptop:shadow-xl
+                "
+                classImage="
+                  shadow-xl
+                  rounded-lg
+                  hp:mx-auto
+                "
+              />
+              <div className="absolute bg-gray-200 rounded-lg w-400 h-268 transform rotate-12 ml-8 hidden tablet:hidden laptop:block" />
+              <div className="absolute bg-gray-100 rounded-lg w-400 h-268 transform rotate-6 ml-8 hidden tablet:hidden laptop:block" />
             </div>
             <div>
-              <h1 className="text-5xl font-semibold leading-snug text-primary">Mengembangkan hobi di sekolah favoritmu</h1>
-              <p className="text-lg font-extralight leading-relaxed mt-7 tracking-wider text-primary">Pilih sekolah dengan ekskul sesuai minat kamu dan cari<br />teman sehobi di sekolah favorit kamu!</p>
+              <h1 className="
+                leading-snug
+                text-primary
+                font-semibold
+                hp:mt-10 tablet:mt-0
+                text-center tablet:text-left
+                text-3xl tablet:text-2xl laptop:text-4xl
+              ">
+                Mengembangkan hobi di sekolah favoritmu
+              </h1>
+              <p className="
+                mt-7
+                font-extralight
+                leading-relaxed
+                text-primary
+                tracking-wider
+                text-center tablet:text-left
+                text-sm tablet:text-md laptop:text-lg
+              ">
+                Pilih sekolah dengan ekskul sesuai minat kamu dan cari<br />teman sehobi di sekolah favorit kamu!
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="mt-96">
-          <div className="grid grid-cols-2 gap-20 mx-24">
-            <div>
-              <h1 className="text-5xl font-semibold leading-snug text-primary">Mendapatkan fasilitas yang baik dan lengkap</h1>
-              <p className="text-lg font-extralight leading-relaxed mt-7 tracking-wider text-primary">Dengan mendapatkan fasilitas yang layak dan lengkap<br />pasti kamu akan lebih semangat dalam proses belajar.</p>
+        <section className="
+          mt-24 tablet:mt-48 laptop:mt-96
+        ">
+          <div className="
+            grid
+            justify-between
+            hp:gap-10 table:gap-20
+            mx-10 hp:mx-10 laptop:mx-24
+            grid-cols-1 tablet:grid-cols-2
+            tablet:flex tablet:flex-row-reverse
+          ">
+            <div className="relative laptop:w-2/4">
+              <Image
+                src={require('../../assets/images/facilities.png')}
+                alt="Rating"
+                width="400px"
+                classWrap="
+                  laptop:absolute
+                  z-10
+                  rounded-xl
+                  right-0
+                  laptop:mr-8
+                  laptop:w-400
+                  laptop:shadow-xl
+                "
+                classImage="
+                  shadow-xl
+                  rounded-lg
+                  hp:mx-auto
+                "
+              />
+              <div className="absolute bg-gray-200 rounded-lg w-400 h-268 transform mr-8 right-0 -rotate-12 hidden tablet:hidden laptop:block" />
+              <div className="absolute bg-gray-100 rounded-lg w-400 h-268 transform mr-8 right-0 -rotate-6 hidden tablet:hidden laptop:block" />
             </div>
-            <div className="relative">
-              <Image src={require('../../assets/images/facilities.png')} alt="Rating" width="400px" classWrap="absolute z-10 rounded-xl mr-8 right-0 shadow-xl" classImage="shadow-xl rounded-lg" />
-              <div className="absolute bg-gray-200 rounded-lg w-400 h-268 transform mr-8 right-0 -rotate-12" />
-              <div className="absolute bg-gray-100 rounded-lg w-400 h-268 transform mr-8 right-0 -rotate-6" />
+            <div className="laptop:w-2/4">
+              <h1 className="
+                leading-snug
+                text-primary
+                font-semibold
+                hp:mt-10 tablet:mt-0
+                text-center tablet:text-left
+                text-3xl tablet:text-2xl laptop:text-4xl
+              ">
+                Mendapatkan fasilitas yang baik dan lengkap
+              </h1>
+              <p className="
+                mt-7
+                font-extralight
+                leading-relaxed
+                text-primary
+                tracking-wider
+                text-center tablet:text-left
+                text-sm tablet:text-md laptop:text-lg
+              ">
+                Dengan mendapatkan fasilitas yang layak dan lengkap<br />pasti kamu akan lebih semangat dalam proses belajar.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="mt-96">
-          <div className="mx-24">
-            <h1 className="text-5xl font-semibold leading-snug text-primary text-center">Sekolah paling banyak diulas</h1>
-            <div className="grid grid-cols-3 gap-0.5 m-28">
+        <section className="
+          mt-24 tablet:mt-48 laptop:mt-96
+        ">
+          <div className="
+            mx-10 hp:mx-10 laptop:mx-24
+          ">
+            <h1 className="
+              font-semibold leading-snug text-primary text-center
+              hp:mt-10 tablet:mt-0
+              text-3xl tablet:text-2xl laptop:text-4xl
+            ">
+              Sekolah paling banyak diulas
+            </h1>
+            <div className="
+              grid grid-cols-2 tablet:grid-cols-3 gap-0.5
+              hp:mt-10 laptop:m-28
+            ">
               {(staticSchool || []).map((dataSchool) => (
                 <div key={dataSchool.id}>
                   <Image src={dataSchool.imageUrl} alt="Image School"  width="395" height="345"/>
@@ -217,7 +407,7 @@ class Homepage extends React.Component {
           </div>
         </section>
          
-        <Footer /> */}
+        <Footer />
       </React.Fragment>
     )
   }
