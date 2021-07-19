@@ -107,7 +107,6 @@ class Homepage extends React.Component {
                     w-full
                     h-10 laptop:h-14
                     font-extralight
-                    focus:outline-none
                     text-xs tablet:text-md laptop:text-lg
                   "
                   placeholder="Masukan emailmu"
@@ -130,7 +129,6 @@ class Homepage extends React.Component {
                     text-center
                     h-7 laptop:h-10
                     font-medium
-                    focus:outline-none
                     text-xs hp:text-xs tablet:text-sm laptop:text-lg
                   "
                 >

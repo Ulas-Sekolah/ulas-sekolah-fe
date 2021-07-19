@@ -16,7 +16,7 @@ export default function Input({
   return (
     <React.Fragment>
       <div className={classWrap}>
-        <input type={type} className={classInput} placeholder={placeholder} />
+        <input type={type} className={`focus:outline-none w-full ${classInput}`} placeholder={placeholder} />
       </div>
     </React.Fragment>
   )
