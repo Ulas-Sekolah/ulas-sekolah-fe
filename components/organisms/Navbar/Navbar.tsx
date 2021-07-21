@@ -60,7 +60,7 @@ export default function Navbar(): any {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               {(menu || []).map((item, idx, arr) => (
-                <li key={idx} className={`${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
+                <li key={idx} className={`cursor-pointer ${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
                   {item.name !== 'switch-btn' ?
                     <Link href={item.name}>
                       {item.displayName}

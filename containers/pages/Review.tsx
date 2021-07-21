@@ -139,12 +139,12 @@ class Review extends React.Component {
             py-4
             mx-3
             h-96
+            top-48
             left-0
             right-0
             bg-gray
             absolute
-            top-48
-          " />
+          "/>
         </section>
 
         <Footer />

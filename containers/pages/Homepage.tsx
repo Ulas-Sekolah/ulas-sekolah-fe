@@ -14,22 +14,22 @@ let staticSchool: any[] = [{
   imageUrl: require('../../assets/images/images-review/school2.png'),
 }, {
   id: 3,
-  name: '',
+  name: 'Al-Azhar',
   address: '',
   imageUrl: require('../../assets/images/images-review/school3.png'),
 }, {
   id: 4,
-  name: '',
+  name: 'SMA Negeri Surabaya',
   address: '',
   imageUrl: require('../../assets/images/images-review/school4.png'),
 }, {
   id: 5,
-  name: '',
+  name: 'SMA Negeri 3 Yogyakarta',
   address: '',
   imageUrl: require('../../assets/images/images-review/school5.png'),
 }, {
   id: 6,
-  name: '',
+  name: 'SMA Negeri 8 Jakarta',
   address: '',
   imageUrl: require('../../assets/images/images-review/school6.png'),
 }]
@@ -395,10 +395,17 @@ class Homepage extends React.Component {
             <div className="
               grid grid-cols-2 tablet:grid-cols-3 gap-0.5
               hp:mt-10 laptop:m-28
+              rounded-lg
             ">
               {(staticSchool || []).map((dataSchool) => (
-                <div key={dataSchool.id}>
-                  <Image src={dataSchool.imageUrl} alt="Image School"  width="395" height="345"/>
+                <div key={dataSchool.id} className="cursor-pointer relative">
+                  <div className="absolute w-full h-full transition ease-in-out duration-300 bg-gradient-to-t from-primary-100 hover:from-primary via-primary-100 hover:via-transparent to-primary-100 hover:to-transparent p-3 bottom-0 transition opacity-0 hover:opacity-100">
+                    <div className="relative w-full h-full bg-primary-100">
+                      <p className="absolute bottom-0 hp:bottom-0 laptop:bottom-6 text-white font-medium text-xs tablet:text-lg">{dataSchool.name}</p>
+                      <p className="absolute bottom-0 text-white font-extralight hidden tablet:block">{dataSchool.address}</p>
+                    </div>
+                  </div>
+                  <Image src={dataSchool.imageUrl} alt="Image School" width="395" height="345"/>
                 </div>
               ))}
             </div>

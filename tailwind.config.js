@@ -21,6 +21,16 @@ module.exports = {
         'blue-100': '#D4EFF6',
         'blue-200': '#4FD5F8',
       }),
+      gradientColorStops: theme => ({
+        ...theme('colors'),
+        'primary': '#303030',
+        'primary-100': 'rgba(48, 48, 48, .4)',
+        'gray': '#F7FAFC',
+        'gray-100': '#E5E5E5',
+        'gray-200': '#C4C4C4',
+        'blue-100': '#D4EFF6',
+        'blue-200': '#4FD5F8',
+       }),
       boxShadow: theme => ({
         ...theme('colors'),
         sm: '0 10px 30px 0 rgba(48, 48, 48, 0.05)',
