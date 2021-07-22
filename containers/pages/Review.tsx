@@ -44,7 +44,7 @@ class Review extends React.Component {
 
     return (
       <React.Fragment>
-        <header className="bg-gray rounded z-50 m-3 hp:h-72 tablet:h-56 py-4">
+        <header className="bg-gray rounded z-50 m-3 hp:h-72 laptop:h-56 py-4">
           <Navbar />
         </header>
 
@@ -78,59 +78,77 @@ class Review extends React.Component {
               hp:col-span-1 laptop:col-span-12
             ">
               {(dataSchool || []).map(data => (
-                <div
-                  className="
-                    px-4
-                    mb-8
-                    text-md
-                    relative
-                    text-primary
-                    cursor-pointer
-                    hp:pb-8 tablet: pb-0
-                    border-b-4 border-gray
-                  "
-                  key={data.id}
-                >
-                  <Image
-                    classWrap="
-                      absolute
-                      inset-y-1/2
-                      hp:right-4 tablet:right-8
+                <>
+                  <div
+                    className="
+                      px-4
+                      text-md
+                      relative
+                      text-primary
+                      cursor-pointer
+                      hp:pb-8 tablet:pb-0
+                      border-b-4 border-gray
                     "
-                    alt="arrow-down"
-                    src={require('../../assets/icons/arrow-down.svg')}
-                  />
-                  <Text classText="font-medium">{data.schoolName}</Text>
-                  <Text classText="
-                    hp:mb-6 laptop:mb-8
-                    text-sm
-                    text-gray-200
-                  ">
-                    {data.address}
-                  </Text>
-                  <div className="
-                    grid
-                    hp:grid-cols-1 laptop:grid-cols-3
-                  ">
-                    <Text classText="
-                      text-sm
-                      hp:mb-2 laptop:mb-8
-                    ">
-                      {`Rerata Nilai: ${data.avarage}`}
-                    </Text>
-                    <Text classText="
-                      text-sm
-                      hp:mb-2 laptop:mb-8
-                    ">
-                      {`NPSN: ${data.npsn}`}
-                    </Text>
-                    <StarRatings
-                      rating={data.rate}
-                      starDimension="20px"
-                      starRatedColor="#FFE095"
+                    onClick={() => null}
+                    key={data.id}
+                  >
+                    <Image
+                      classWrap="
+                        absolute
+                        inset-y-1/2
+                        hp:right-4 tablet:right-8
+                      "
+                      alt="arrow-down"
+                      src={require('../../assets/icons/arrow-down.svg')}
                     />
+                    <Text classText="font-medium">{data.schoolName}</Text>
+                    <Text classText="
+                      hp:mb-6 laptop:mb-8
+                      text-sm
+                      text-gray-200
+                    ">
+                      {data.address}
+                    </Text>
+                    <div className="
+                      grid
+                      hp:grid-cols-1 laptop:grid-cols-3
+                    ">
+                      <Text classText="
+                        text-sm
+                        hp:mb-2 laptop:mb-8
+                      ">
+                        {`Rerata Nilai: ${data.avarage}`}
+                      </Text>
+                      <Text classText="
+                        text-sm
+                        hp:mb-2 laptop:mb-8
+                      ">
+                        {`NPSN: ${data.npsn}`}
+                      </Text>
+                      <StarRatings
+                        rating={data.rate}
+                        starDimension="20px"
+                        starRatedColor="#FFE095"
+                      />
+                    </div>
                   </div>
-                </div>
+
+                  <div className="
+                    p-2
+                    mb-8
+                    text-center
+                    bg-blue-200
+                    rounded-br-lg
+                    rounded-bl-lg
+                  ">
+                    <p className="
+                      text-white
+                      font-semibold
+                    ">
+                      Lihat Detail
+                    </p>
+                  </div>
+                </>
               ))}
 
               <Pagination />
@@ -143,8 +161,8 @@ class Review extends React.Component {
             right-0
             bg-gray
             absolute
-            hp:h-56 tablet:h-96
-            hp:top-72 tablet:top-48
+            hp:h-56 laptop:h-96
+            hp:top-72 laptop:top-48
           "/>
         </section>
 
