@@ -30,7 +30,7 @@ export default function Navbar(): any {
       shadow-sm
       py-3 px-10
       justify-between
-      mx-10 hp:mx-10 laptop:mx-24
+      mx-5 hp:mx-5 tablet:mx-10 laptop:mx-24
       mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
       ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`
     }>
