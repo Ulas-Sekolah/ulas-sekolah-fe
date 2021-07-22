@@ -44,17 +44,17 @@ class Review extends React.Component {
 
     return (
       <React.Fragment>
-        <header className="bg-gray rounded m-3 h-56 py-4">
+        <header className="bg-gray rounded z-50 m-3 hp:h-72 tablet:h-56 py-4">
           <Navbar />
         </header>
 
         <section>
           <div className="
             grid
-            grid-flow-col gap-4
             hp:gap-10 table:gap-20
-            mx-10 hp:mx-10 laptop:mx-24
-            grid-cols-1 tablet:grid-cols-2
+            mx-8 hp:mx-8 laptop:mx-24
+            hp:grid-flow-row laptop:grid-flow-col gap-4
+            grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
           ">
             <div className="
               p-8
@@ -74,8 +74,8 @@ class Review extends React.Component {
               z-50
               bg-white
               shadow-xl
-              col-span-12
               rounded-lg
+              hp:col-span-1 laptop:col-span-12
             ">
               {(dataSchool || []).map(data => (
                 <div
@@ -86,6 +86,7 @@ class Review extends React.Component {
                     relative
                     text-primary
                     cursor-pointer
+                    hp:pb-8 tablet: pb-0
                     border-b-4 border-gray
                   "
                   key={data.id}
@@ -93,15 +94,15 @@ class Review extends React.Component {
                   <Image
                     classWrap="
                       absolute
-                      right-8
                       inset-y-1/2
+                      hp:right-4 tablet:right-8
                     "
                     alt="arrow-down"
                     src={require('../../assets/icons/arrow-down.svg')}
                   />
                   <Text classText="font-medium">{data.schoolName}</Text>
                   <Text classText="
-                    mb-8
+                    hp:mb-6 laptop:mb-8
                     text-sm
                     text-gray-200
                   ">
@@ -109,17 +110,17 @@ class Review extends React.Component {
                   </Text>
                   <div className="
                     grid
-                    grid-cols-3
+                    hp:grid-cols-1 laptop:grid-cols-3
                   ">
                     <Text classText="
-                      mb-8
                       text-sm
+                      hp:mb-2 laptop:mb-8
                     ">
                       {`Rerata Nilai: ${data.avarage}`}
                     </Text>
                     <Text classText="
-                      mb-8
                       text-sm
+                      hp:mb-2 laptop:mb-8
                     ">
                       {`NPSN: ${data.npsn}`}
                     </Text>
@@ -138,13 +139,13 @@ class Review extends React.Component {
           <div className="
             py-4
             mx-3
-            h-96
             left-0
             right-0
             bg-gray
             absolute
-            top-48
-          " />
+            hp:h-56 tablet:h-96
+            hp:top-72 tablet:top-48
+          "/>
         </section>
 
         <Footer />

@@ -30,7 +30,7 @@ export default function Navbar(): any {
       shadow-sm
       py-3 px-10
       justify-between
-      mx-10 hp:mx-10 laptop:mx-24
+      mx-5 hp:mx-5 tablet:mx-10 laptop:mx-24
       mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
       ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`
     }>
@@ -60,7 +60,7 @@ export default function Navbar(): any {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               {(menu || []).map((item, idx, arr) => (
-                <li key={idx} className={`${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
+                <li key={idx} className={`cursor-pointer ${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
                   {item.name !== 'switch-btn' ?
                     <Link href={item.name}>
                       {item.displayName}

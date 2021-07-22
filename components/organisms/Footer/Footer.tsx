@@ -7,7 +7,8 @@ export default function Footer() {
     <footer className="
       mt-24 hp:px-10 laptop:px-24 py-16 w-100 bg-gray
       grid hp:grid-cols-1 laptop:grid-cols-3
-      hp:gap-16 laptop:gap-x-36 laptop:gap-y-20">
+      hp:gap-16 laptop:gap-x-36 laptop:gap-y-20
+    ">
       <div>
         <SubHeading>Rating Sekolah</SubHeading>
         <Text classText="mt-7 text-md font-extralight">Kami hadir menciptakan fitur untuk memudahkan anak bangsa mencari sekolah favoritnya berdasarkan rating, jurusan, ekskul dan fasilitas sekolah. (<span className="text-blue-200 cursor-pointer">selangkapnya...</span>)</Text>
