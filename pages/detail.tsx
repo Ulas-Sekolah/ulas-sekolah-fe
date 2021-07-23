@@ -4,7 +4,7 @@ import Detail from '../containers/pages/Detail'
 
 export default function Home() {
   return (
-    <Layout title={`${process.env.appName} | Review Sekolah`}>
+    <Layout title={`${process.env.appName} | Detail Sekolah`}>
       <Detail />
     </Layout>
   )

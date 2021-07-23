@@ -1,17 +1,19 @@
 import React from 'react'
 import StarRatings from 'react-star-ratings'
+import Link from 'next/link'
 import { Image, Input, Pagination, Text } from '../../components/atoms'
 import { Navbar, Footer} from '../../components/organisms'
 
 class Review extends React.Component {
-  render() {
-    const dataSchool = [{
+  state = {
+    dataSchool: [{
       id: 1,
       schoolName: 'SMK NEGERI 26 JAKARTA',
       address: 'Jakarta Timur',
       avarage: '525,782',
       npsn: '20103787',
       rate: 4.403,
+      expand: false
     }, {
       id: 2,
       schoolName: 'SMAN 8 JAKARTA',
@@ -19,6 +21,7 @@ class Review extends React.Component {
       avarage: '594,865',
       npsn: '20102568',
       rate: 5,
+      expand: false
     }, {
       id: 3,
       schoolName: 'SMAN 5 SURABAYA',
@@ -26,6 +29,7 @@ class Review extends React.Component {
       avarage: '594,605',
       npsn: '20532248',
       rate: 4.103,
+      expand: false
     }, {
       id: 4,
       schoolName: 'SMAS DIAN HARAPAN',
@@ -33,6 +37,7 @@ class Review extends React.Component {
       avarage: '589,811',
       npsn: '20104413',
       rate: 3.803,
+      expand: false
     }, {
       id: 5,
       schoolName: 'SMAN 1 YOGYAKARTA',
@@ -40,8 +45,23 @@ class Review extends React.Component {
       avarage: '588,002',
       npsn: '20403174',
       rate: 4.903,
+      expand: false
     }]
+  }
 
+  handleShowDetail = (id, idx) => {
+    let schoolState = [...this.state.dataSchool]
+    let schoolElement = schoolState.filter(school => school.id === id)
+
+    schoolElement[0].expand = !schoolElement[0].expand
+    schoolState[idx] = schoolElement[0]
+
+    this.setState({
+      dataSchool: schoolState
+    })
+  }
+
+  render() {
     return (
       <React.Fragment>
         <header className="bg-gray rounded z-50 m-3 hp:h-72 laptop:h-56 py-4">
@@ -56,14 +76,7 @@ class Review extends React.Component {
             hp:grid-flow-row laptop:grid-flow-col gap-4
             grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
           ">
-            <div className="
-              p-8
-              z-50
-              shadow-xl
-              col-span-1
-              rounded-lg
-              bg-white
-            ">
+            <div className="p-8 z-50 shadow-xl col-span-1 rounded-lg bg-white">
               <Text classText="font-medium mb-2">
                 Mencari Sekolah
               </Text>
@@ -77,27 +90,15 @@ class Review extends React.Component {
               rounded-lg
               hp:col-span-1 laptop:col-span-12
             ">
-              {(dataSchool || []).map(data => (
+              {(this.state.dataSchool || []).map((data, idx) => (
                 <>
                   <div
-                    className="
-                      px-4
-                      text-md
-                      relative
-                      text-primary
-                      cursor-pointer
-                      hp:pb-8 tablet:pb-0
-                      border-b-4 border-gray
-                    "
-                    onClick={() => null}
+                    className="px-4 text-md relative text-primary cursor-pointer hp:pb-8 laptop:pb-0 border-b-4 border-gray"
+                    onClick={() => this.handleShowDetail(data.id, idx)}
                     key={data.id}
                   >
                     <Image
-                      classWrap="
-                        absolute
-                        inset-y-1/2
-                        hp:right-4 tablet:right-8
-                      "
+                      classWrap={`absolute inset-y-1/2 hp:right-4 tablet:right-8 transition transform ${data.expand ? '-rotate-180' : 'rotate-0'}`}
                       alt="arrow-down"
                       src={require('../../assets/icons/arrow-down.svg')}
                     />
@@ -133,21 +134,13 @@ class Review extends React.Component {
                     </div>
                   </div>
 
-                  <div className="
-                    p-2
-                    mb-8
-                    text-center
-                    bg-blue-200
-                    rounded-br-lg
-                    rounded-bl-lg
-                  ">
-                    <p className="
-                      text-white
-                      font-semibold
-                    ">
-                      Lihat Detail
-                    </p>
-                  </div>
+                  <Link href="#">
+                    <div className={`p-2 cursor-pointer text-center bg-blue-200 rounded-br-lg rounded-bl-lg transition transform duration-100 ${data.expand ? 'mb-8 opacity-1' : 'mb-0 opacity-0 translate-y-6'}`}>
+                      <a className="text-white font-semibold">
+                        Lihat Detail
+                      </a>
+                    </div>
+                  </Link>
                 </>
               ))}
 
@@ -155,14 +148,9 @@ class Review extends React.Component {
             </div>
           </div>
           <div className="
-            py-4
-            mx-3
-            left-0
-            right-0
-            bg-gray
-            absolute
             hp:h-56 laptop:h-96
             hp:top-72 laptop:top-48
+            py-4 mx-3 left-0 right-0 bg-gray absolute
           "/>
         </section>
 
