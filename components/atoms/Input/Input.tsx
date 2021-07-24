@@ -1,10 +1,11 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 interface PropInputTypes {
   type: string
   classWrap?: string
   classInput?: string
-  placeholder: string
+  placeholder?: string
 }
 
 export default function Input({

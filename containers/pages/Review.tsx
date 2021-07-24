@@ -1,8 +1,8 @@
 import React from 'react'
 import StarRatings from 'react-star-ratings'
 import Link from 'next/link'
-import { Image, Input, Pagination, Text } from '../../components/atoms'
-import { Navbar, Footer} from '../../components/organisms'
+import { Image, Pagination, Text } from '../../components/atoms'
+import { Navbar, Footer, Filter} from '../../components/organisms'
 
 class Review extends React.Component {
   state = {
@@ -76,12 +76,7 @@ class Review extends React.Component {
             hp:grid-flow-row laptop:grid-flow-col gap-4
             grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
           ">
-            <div className="p-8 z-50 shadow-xl col-span-1 rounded-lg bg-white">
-              <Text classText="font-medium mb-2">
-                Mencari Sekolah
-              </Text>
-              <Input type="text" classWrap="border-gray border-4 p-2 rounded-lg" classInput="font-medium opacity-30 font-medium" placeholder="Ketikan Sekolahmu" />
-            </div>
+            <Filter />
             <div className="
               p-8
               z-50
