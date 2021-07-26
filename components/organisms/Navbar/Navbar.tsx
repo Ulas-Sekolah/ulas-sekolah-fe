@@ -31,7 +31,7 @@ export default function Navbar(): any {
       py-3 px-10
       justify-between
       mx-5 hp:mx-5 tablet:mx-10 laptop:mx-24
-      mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
+      mt-3 hp:mt-3 tablet:mt-5 laptop:mt-14
       ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`
     }>
       <div className="relative flex flex-wrap items-center justify-between bg-teal-500 w-full">

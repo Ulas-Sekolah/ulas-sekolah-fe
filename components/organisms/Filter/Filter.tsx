@@ -67,7 +67,7 @@ export default function Footer() {
           </select>
         </div>
       </label>
-      <Button classButton="focus:outline-none mt-8 rounded-lg p-2 cursor-pointer w-full bg-blue-200">
+      <Button onClick={null} classButton="focus:outline-none mt-8 rounded-lg p-2 cursor-pointer w-full bg-blue-200">
         <span className="text-white ml-2 font-light text-base text-white font-medium">Cari Sekolahmu</span>
       </Button>
     </form>

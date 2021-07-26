@@ -1,6 +1,7 @@
 import React from 'react'
 
 interface PropButtonTypes {
+  onClick(): void
   dataText?: string
   classWrap?: string
   classButton?: string
@@ -12,11 +13,12 @@ export default function Button({
   classButton,
   children,
   dataText,
+  onClick,
 }: PropButtonTypes): any {
   return (
     <React.Fragment>
       <div className={classWrap}>
-        <button type="submit" data-text={dataText} className={classButton}>{children}</button>
+        <button type="submit" data-text={dataText} className={classButton} onClick={onClick}>{children}</button>
       </div>
     </React.Fragment>
   )

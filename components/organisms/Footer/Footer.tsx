@@ -32,7 +32,7 @@ export default function Footer() {
           <Image src={require('../../../assets/images/appstore.png')} alt="banner" classWrap="ml-3" />
         </div>
         <Text classText="mt-7 text-sm font-medium">Kamu alumni sekolah mana?</Text>
-        <Button classButton="bg-blue-200 py-1.5 px-5 rounded-lg flex items-center mt-2.5" classWrap="flex justify-end">
+        <Button onClick={null} classButton="bg-blue-200 py-1.5 px-5 rounded-lg flex items-center mt-2.5" classWrap="flex justify-end">
           <Image
             src={require('../../../assets/icons/graduate.svg')}
             alt="Graduate Image"

@@ -95,7 +95,7 @@ class Review extends React.Component {
                     <Image
                       classWrap={`absolute inset-y-1/2 hp:right-4 tablet:right-8 transition transform ${data.expand ? '-rotate-180' : 'rotate-0'}`}
                       alt="arrow-down"
-                      src={require('../../assets/icons/arrow-down.svg')}
+                      src={require('../../assets/icons/arrow-black.svg')}
                     />
                     <Text classText="font-medium">{data.schoolName}</Text>
                     <Text classText="
@@ -129,7 +129,7 @@ class Review extends React.Component {
                     </div>
                   </div>
 
-                  <Link href="#">
+                  <Link href="/detail">
                     <div className={`p-2 cursor-pointer text-center bg-blue-200 rounded-br-lg rounded-bl-lg transition transform duration-100 ${data.expand ? 'mb-8 opacity-1' : 'mb-0 opacity-0 translate-y-6'}`}>
                       <a className="text-white font-semibold">
                         Lihat Detail
