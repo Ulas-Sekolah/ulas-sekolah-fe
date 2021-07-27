@@ -1,7 +1,8 @@
 import React from 'react'
 import StarRatings from 'react-star-ratings'
 import Link from 'next/link'
-import { Image, Pagination, Text } from '../../components/atoms'
+import { Image, Text } from '../../components/atoms'
+import { Pagination } from '../../components/molecules'
 import { Navbar, Footer, Filter} from '../../components/organisms'
 
 class Review extends React.Component {
@@ -86,7 +87,7 @@ class Review extends React.Component {
               hp:col-span-1 laptop:col-span-12
             ">
               {(this.state.dataSchool || []).map((data, idx) => (
-                <>
+                <div key={data.id}>
                   <div
                     className="px-4 text-md relative text-primary cursor-pointer hp:pb-8 laptop:pb-0 border-b-4 border-gray"
                     onClick={() => this.handleShowDetail(data.id, idx)}
@@ -136,7 +137,7 @@ class Review extends React.Component {
                       </a>
                     </div>
                   </Link>
-                </>
+                </div>
               ))}
 
               <Pagination />

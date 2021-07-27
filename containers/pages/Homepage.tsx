@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Image, Input } from '../../components/atoms'
 import { Navbar, Footer } from '../../components/organisms'
 
-let staticSchool: any[] = [{
+const staticSchool: any[] = [{
   id: 1,
   name: 'SMK Negri 26 Jakarta',
   address: 'Jl. Balai Pustaka Baru I, Rawamangun',
@@ -33,6 +33,7 @@ let staticSchool: any[] = [{
   address: '',
   imageUrl: require('../../assets/images/images-review/school6.png'),
 }]
+
 class Homepage extends React.Component {
   render() {
     return (
@@ -112,6 +113,7 @@ class Homepage extends React.Component {
                   placeholder="Masukan emailmu"
                 />
                 <Button
+                  onClick={() => null}
                   classWrap="
                     w-full
                     transition
