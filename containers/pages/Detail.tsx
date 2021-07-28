@@ -1,6 +1,6 @@
 import React from 'react'
 import StarRatings from 'react-star-ratings'
-import { Button, Image } from '../../components/atoms'
+import { Button, Image, Text } from '../../components/atoms'
 import { Footer} from '../../components/organisms'
 import { useRouter } from 'next/router'
 import { Slider } from '../../components/molecules'
@@ -90,11 +90,63 @@ export default function Detail() {
           grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
         ">
           <div>
-            <h1 className="mb-5">Alamat</h1>
-            <div className="p-4 flex flex-col justify-center">
-              {/* <p className="text-8xl font-bold flex justify-center">A</p>
-              <p className="text-2xl font-semibold flex justify-center">Akreditasi</p> */}
-            </div>
+            <h1 className="mb-5">Fasilitas</h1>
+            <Text classText="font-light tracking-wide">Ruang Laboratorium Biologi</Text>
+            <span className="mr-3">
+              <StarRatings
+                rating={5}
+                starDimension="20px"
+                starRatedColor="#FFE095"
+              />
+            </span>
+            <span>5.0</span>
+            <Text classText="font-light tracking-wide mt-4">Ruang Laboratorium Fisika</Text>
+            <span className="mr-3">
+              <StarRatings
+                rating={5}
+                starDimension="20px"
+                starRatedColor="#FFE095"
+              />
+            </span>
+            <span>5.0</span>
+            <Text classText="font-light tracking-wide mt-4">Masjid Darul Irfan</Text>
+            <span className="mr-3">
+              <StarRatings
+                rating={5}
+                starDimension="20px"
+                starRatedColor="#FFE095"
+              />
+            </span>
+            <span>5.0</span>
+
+            <h1 className="mt-8 mb-5">Ekskul</h1>
+            <Text classText="font-light tracking-wide">Pramuka</Text>
+            <span className="mr-3">
+              <StarRatings
+                rating={5}
+                starDimension="20px"
+                starRatedColor="#FFE095"
+              />
+            </span>
+            <span>5.0</span>
+            <Text classText="font-light tracking-wide mt-4">Futsal</Text>
+            <span className="mr-3">
+              <StarRatings
+                rating={5}
+                starDimension="20px"
+                starRatedColor="#FFE095"
+              />
+            </span>
+            <span>5.0</span>
+            <Text classText="font-light tracking-wide mt-4">Masjid Darul Irfan</Text>
+            <span className="mr-3">
+              <StarRatings
+                rating={5}
+                starDimension="20px"
+                starRatedColor="#FFE095"
+              />
+            </span>
+            <span>5.0</span>
           </div>
           <div className="hp:col-span-1 laptop:col-span-12">
             <h1 className="mb-5">
@@ -108,8 +160,115 @@ export default function Detail() {
               </span>
               5.0
             </h1>
-            <div className="overflow-hidden shadow-xl rounded-lg h-60">
-              {/* <Slider images={staticSchoolImages}/> */}
+            <div className="overflow-hidden shadow-xl rounded-lg h-auto">
+              <span className="ml-6 mr-3">
+                <StarRatings
+                  rating={5}
+                  starDimension="20px"
+                  starRatedColor="#FFE095"
+                />
+              </span>
+              <span>5.0</span>
+              <span className="float-right mr-6 font-light tracking-wide">Ditulis tanggal, 25 April 2020</span>
+              <Text classText="
+                text-sm
+                mx-6
+                font-medium
+                mt-1
+              ">
+                <span className="text-gray-200 font-normal">oleh</span> Alumni <span className="text-gray-200 font-normal">tahun</span> 2019
+              </Text>
+              <Text classText="
+                hp:mb-6 laptop:mb-8
+                text-sm
+                mx-6
+                mt-1
+              ">
+                Direkomendasikan
+              </Text>
+              <Text classText="
+                text-xl
+                mx-6
+                font-light
+                tracking-wide	
+              ">
+                Sekolah nya keren, akreditasinya juga bagus tapi sayang sering banjir kalau hujan deras.
+              </Text>
+              <div className="mx-3 mt-8">
+                <hr className="border-2 m-auto" />
+              </div>
+
+              <span className="ml-6 mr-3">
+                <StarRatings
+                  rating={5}
+                  starDimension="20px"
+                  starRatedColor="#FFE095"
+                />
+              </span>
+              <span>5.0</span>
+              <span className="float-right mr-6 font-light tracking-wide">Ditulis tanggal, 25 April 2020</span>
+              <Text classText="
+                text-sm
+                mx-6
+                font-medium
+                mt-1
+              ">
+                <span className="text-gray-200 font-normal">oleh</span> Alumni <span className="text-gray-200 font-normal">tahun</span> 2019
+              </Text>
+              <Text classText="
+                hp:mb-6 laptop:mb-8
+                text-sm
+                mx-6
+                mt-1
+              ">
+                Direkomendasikan
+              </Text>
+              <Text classText="
+                text-xl
+                mx-6
+                font-light
+                tracking-wide	
+              ">
+                Sayang sekali tidak bisa menikmati fasilitas di sekolah ini, karena pandemi yang berkepanjangan.
+              </Text>
+              <div className="mx-3 mt-8">
+                <hr className="border-2 m-auto" />
+              </div>
+
+              <span className="ml-6 mr-3">
+                <StarRatings
+                  rating={5}
+                  starDimension="20px"
+                  starRatedColor="#FFE095"
+                />
+              </span>
+              <span>5.0</span>
+              <span className="float-right mr-6 font-light tracking-wide">Ditulis tanggal, 25 April 2020</span>
+              <Text classText="
+                text-sm
+                mx-6
+                font-medium
+                mt-1
+              ">
+                <span className="text-gray-200 font-normal">oleh</span> Alumni <span className="text-gray-200 font-normal">tahun</span> 2019
+              </Text>
+              <Text classText="
+                hp:mb-6 laptop:mb-8
+                text-sm
+                mx-6
+                mt-1
+              ">
+                Direkomendasikan
+              </Text>
+              <Text classText="
+                text-xl
+                mx-6
+                mb-10
+                font-light
+                tracking-wide	
+              ">
+                Sekolah nya keren, akreditasinya juga bagus tapi sayang sering banjir kalau hujan deras.
+              </Text>
             </div>
           </div>
         </div>
