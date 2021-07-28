@@ -47,6 +47,7 @@ export default function Detail() {
         />
         <span className="text-white font-medium">Kembali</span>
       </Button>
+
       <div className="
         hp:mx-10 laptop:mx-24
         mt-3 hp:mt-3 tablet:mt-5 laptop:mt-28
@@ -68,6 +69,14 @@ export default function Detail() {
         </div>
       </div>
       
+      <div>
+        <div className="hp:mx-10 laptop:mx-24 mt-20">
+          <h1 className="mb-5">Deskripsi</h1>
+          <p className="font-extralight">Sekolah Menengah Atas Negeri 8 Jakarta atau dikenal juga dengan nama SMANDEL adalah salah satu SMA Negeri di Daerah Khusus Ibu Kota Jakarta yang memiliki akreditasi A. SMA Negeri 8 Jakarta berada di Tebet, Jakarta Selatan.<br/><br/>SMA Negeri 8 Jakarta dibuka/ didirikan pada tanggal 1 Agustus 1958 di Taman Slamet Rijadi Jakarta dengan nama SMA Negeri VIII/ABC dengan Sp. Menteri P.D.K. tanggal 21 Agustus 1958 No. 26/SK/B.111.<br /><br/>Pada bulan Januari 1959 dlakukan pemindahan tempat atau gedung sekolah di SMP Negeri III Jakarta, Jl. Manggarai Utara IV/6, Manggarai Utara, Jakarta Selatan. Dan pada tanggal 30 Maret 1971 SMA Negeri 8 Jakarta berdiri di Jalan Taman Bukitduri Tebet dan diresmikan oleh Gubernur Ali Sadikin.</p>
+          <h1 className="mt-10 mb-5">Alamat</h1>
+          <p className="font-extralight">Jl. Taman Bukit Duri No.2</p>
+        </div>
+      </div>
       <Footer />
     </>
   )
