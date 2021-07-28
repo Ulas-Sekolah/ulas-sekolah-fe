@@ -1,6 +1,6 @@
 import React from 'react'
-import StarRatings from 'react-star-ratings'
 import Link from 'next/link'
+import StarRatings from 'react-star-ratings'
 import { Image, Text } from '../../components/atoms'
 import { Pagination } from '../../components/molecules'
 import { Navbar, Footer, Filter} from '../../components/organisms'
