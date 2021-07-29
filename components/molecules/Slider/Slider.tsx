@@ -46,7 +46,7 @@ export default function Slider({
   return (
     <div ref={sliderRef} className="keen-slider">
       {(images || []).map(dataImg => (
-        <Image classWrap="keen-slider__slide" classImage="mx-auto object-cover h-60 w-full" src={dataImg.imgThumb} alt="img-slider"/>
+        <Image key={dataImg.id} classWrap="keen-slider__slide" classImage="mx-auto object-cover h-60 w-full" src={dataImg.imgThumb} alt="img-slider"/>
       ))}
     </div>
   )

@@ -3,6 +3,7 @@ import React from 'react'
 interface PropImageTypes {
   src: any
   alt: string
+  key?: number
   height?: string
   width?: string
   classWrap?: string
@@ -12,16 +13,15 @@ interface PropImageTypes {
 export default function Image({
   src,
   alt,
+  key,
   height,
   width,
   classWrap,
   classImage,
 }: PropImageTypes): any {
   return (
-    <React.Fragment>
-      <div className={classWrap}>
-        <img src={src} alt={alt} className={classImage} height={height} width={width} />
-      </div>
-    </React.Fragment>
+    <div key={key} className={classWrap}>
+      <img src={src} alt={alt} className={classImage} height={height} width={width} />
+    </div>
   )
 }

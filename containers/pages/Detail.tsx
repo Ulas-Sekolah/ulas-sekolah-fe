@@ -16,6 +16,26 @@ const staticSchoolImages: any[] = [{
   imgThumb: require('../../assets/images/images-detail-school/Sma8-3.jpeg'),
 }]
 
+const staticReviewSchools: any[] = [{
+  id: 1,
+  rate: 4.3,
+  date: '25 April 2020',
+  recommend: true,
+  review: 'Sekolah nya keren, akreditasinya juga bagus tapi sayang sering banjir kalau hujan deras.'
+}, {
+  id: 2,
+  rate: 5.0,
+  date: '25 April 2020',
+  recommend: true,
+  review: 'Sayang sekali tidak bisa menikmati fasilitas di sekolah ini, karena pandemi yang berkepanjangan.'
+}, {
+  id: 3,
+  rate: 5.0,
+  date: '25 April 2020',
+  recommend: false,
+  review: 'Perlengkapan di ruangan loboratorium fisika kurang lengkap.'
+}]
+
 export default function Detail() {
   const router = useRouter()
 
@@ -160,115 +180,49 @@ export default function Detail() {
               </span>
               5.0
             </h1>
-            <div className="overflow-hidden shadow-xl rounded-lg h-auto">
-              <span className="ml-6 mr-3">
-                <StarRatings
-                  rating={5}
-                  starDimension="20px"
-                  starRatedColor="#FFE095"
-                />
-              </span>
-              <span>5.0</span>
-              <span className="float-right mr-6 font-light tracking-wide">Ditulis tanggal, 25 April 2020</span>
-              <Text classText="
-                text-sm
-                mx-6
-                font-medium
-                mt-1
-              ">
-                <span className="text-gray-200 font-normal">oleh</span> Alumni <span className="text-gray-200 font-normal">tahun</span> 2019
-              </Text>
-              <Text classText="
-                hp:mb-6 laptop:mb-8
-                text-sm
-                mx-6
-                mt-1
-              ">
-                Direkomendasikan
-              </Text>
-              <Text classText="
-                text-xl
-                mx-6
-                font-light
-                tracking-wide	
-              ">
-                Sekolah nya keren, akreditasinya juga bagus tapi sayang sering banjir kalau hujan deras.
-              </Text>
-              <div className="mx-3 mt-8">
-                <hr className="border-2 m-auto" />
-              </div>
+            <div className="overflow-hidden shadow-xl rounded-lg h-auto p-10">
+              {(staticReviewSchools || []).map(review => (
+                <div key={review.id}>
+                  <span className="ml-6 mr-3">
+                    <StarRatings
+                      rating={review.rate}
+                      starDimension="20px"
+                      starRatedColor="#FFE095"
+                    />
+                  </span>
+                  <span>{review.rate.toFixed(1)}</span>
+                  <span className="float-right mr-6 text-md font-extralight tracking-wide">Ditulis tanggal, {review.date}</span>
+                  <Text classText="
+                    text-sm
+                    mx-6
+                    font-medium
+                    mt-1
+                  ">
+                    <span className="text-gray-200 font-normal">oleh</span> Alumni <span className="text-gray-200 font-normal">tahun</span> 2019
+                  </Text>
+                  <Text classText="
+                    hp:mb-6 laptop:mb-8
+                    text-sm
+                    mx-6
+                    mt-1
+                    font-light
+                  ">
+                    <span><Image alt="recommend" classWrap="inline-block mr-2" src={review.recommend ? require('../../assets/icons/like.svg') : require('../../assets/icons/dislike.svg')} /></span> {review.recommend ? 'Direkomendasikan' : 'Tidak Direkomendasikan'}
+                  </Text>
+                  <Text classText="
+                    mx-6
+                    text-md
+                    text-primary
+                    font-light
+                  ">
+                    {review.review}
+                  </Text>
+                  <div className="my-4">
+                    <hr/>
+                  </div>
+                </div>
+              ))}
 
-              <span className="ml-6 mr-3">
-                <StarRatings
-                  rating={5}
-                  starDimension="20px"
-                  starRatedColor="#FFE095"
-                />
-              </span>
-              <span>5.0</span>
-              <span className="float-right mr-6 font-light tracking-wide">Ditulis tanggal, 25 April 2020</span>
-              <Text classText="
-                text-sm
-                mx-6
-                font-medium
-                mt-1
-              ">
-                <span className="text-gray-200 font-normal">oleh</span> Alumni <span className="text-gray-200 font-normal">tahun</span> 2019
-              </Text>
-              <Text classText="
-                hp:mb-6 laptop:mb-8
-                text-sm
-                mx-6
-                mt-1
-              ">
-                Direkomendasikan
-              </Text>
-              <Text classText="
-                text-xl
-                mx-6
-                font-light
-                tracking-wide	
-              ">
-                Sayang sekali tidak bisa menikmati fasilitas di sekolah ini, karena pandemi yang berkepanjangan.
-              </Text>
-              <div className="mx-3 mt-8">
-                <hr className="border-2 m-auto" />
-              </div>
-
-              <span className="ml-6 mr-3">
-                <StarRatings
-                  rating={5}
-                  starDimension="20px"
-                  starRatedColor="#FFE095"
-                />
-              </span>
-              <span>5.0</span>
-              <span className="float-right mr-6 font-light tracking-wide">Ditulis tanggal, 25 April 2020</span>
-              <Text classText="
-                text-sm
-                mx-6
-                font-medium
-                mt-1
-              ">
-                <span className="text-gray-200 font-normal">oleh</span> Alumni <span className="text-gray-200 font-normal">tahun</span> 2019
-              </Text>
-              <Text classText="
-                hp:mb-6 laptop:mb-8
-                text-sm
-                mx-6
-                mt-1
-              ">
-                Direkomendasikan
-              </Text>
-              <Text classText="
-                text-xl
-                mx-6
-                mb-10
-                font-light
-                tracking-wide	
-              ">
-                Sekolah nya keren, akreditasinya juga bagus tapi sayang sering banjir kalau hujan deras.
-              </Text>
             </div>
           </div>
         </div>
