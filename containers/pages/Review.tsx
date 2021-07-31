@@ -10,41 +10,41 @@ export default function Review() {
     dataSchool: [{
       id: 1,
       schoolName: 'SMK NEGERI 26 JAKARTA',
-      address: 'Jakarta Timur',
-      avarage: '525,782',
-      npsn: '20103787',
+      address: 'Jl. Balai Pustaka Baru I',
+      province: 'Prov. D.K.I. Jakarta',
+      city: 'Jakarta Timur',
       rate: 4.403,
       expand: false
     }, {
       id: 2,
       schoolName: 'SMAN 8 JAKARTA',
-      address: 'Jakarta Selatan',
-      avarage: '594,865',
-      npsn: '20102568',
+      address: 'Jl. Taman Bukit Duri No.2',
+      province: 'Prov. D.K.I. Jakarta',
+      city: 'Jakarta Selatan',
       rate: 5,
       expand: false
     }, {
       id: 3,
       schoolName: 'SMAN 5 SURABAYA',
-      address: 'Kota Surabaya',
-      avarage: '594,605',
-      npsn: '20532248',
+      address: 'Jl. Kusuma Bangsa No.21',
+      province: 'Prov. Surabaya',
+      city: 'Kota Surabaya',
       rate: 4.103,
       expand: false
     }, {
       id: 4,
       schoolName: 'SMAS DIAN HARAPAN',
-      address: 'Jakarta Barat',
-      avarage: '589,811',
-      npsn: '20104413',
+      address: 'Jl. Bedugul No.5B',
+      province: 'Prov. D.K.I. Jakarta',
+      city: 'Jakarta Barat',
       rate: 3.803,
       expand: false
     }, {
       id: 5,
       schoolName: 'SMAN 1 YOGYAKARTA',
-      address: 'Kota Yogyakarta',
-      avarage: '588,002',
-      npsn: '20403174',
+      address: 'Jl. HOS Cokroaminoto No.10',
+      province: 'Prov. D.I. Yogyakarta',
+      city: 'Kota Yogyakarta',
       rate: 4.903,
       expand: false
     }]
@@ -113,13 +113,13 @@ export default function Review() {
                       text-sm
                       hp:mb-2 laptop:mb-8
                     ">
-                      {`Rerata Nilai: ${data.avarage}`}
+                      {`Provinsi: ${data.province}`}
                     </Text>
                     <Text classText="
                       text-sm
                       hp:mb-2 laptop:mb-8
                     ">
-                      {`NPSN: ${data.npsn}`}
+                      {`Kota/Kab: ${data.city}`}
                     </Text>
                     <StarRatings
                       rating={data.rate}
