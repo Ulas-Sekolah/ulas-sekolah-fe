@@ -71,9 +71,9 @@ export default function Detail() {
 
       <div className="
         hp:mx-10 laptop:mx-24
-        mt-3 hp:mt-3 tablet:mt-5 laptop:mt-28
+        mt-10 hp:mt-10 laptop:mt-28
       ">
-        <h1 className="text-3xl font-semibold">SMAN 8 JAKARTA</h1>
+        <h1 className="text-xl hp:text-xl text-3xl font-semibold">SMAN 8 JAKARTA</h1>
         <div className="
           grid
           hp:gap-10 table:gap-20
@@ -110,8 +110,8 @@ export default function Detail() {
           grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
         ">
           <div>
-            <h1 className="mb-5">Fasilitas</h1>
-            <Text classText="font-light tracking-wide">Ruang Laboratorium Biologi</Text>
+            <h1 className="hp:mt-10 tablet:mt-0 hp:mb-5 tablet:mt-0">Fasilitas</h1>
+            <Text classText="font-extralight tracking-wide">Ruang Laboratorium Biologi</Text>
             <span className="mr-3">
               <StarRatings
                 rating={5}
@@ -120,7 +120,7 @@ export default function Detail() {
               />
             </span>
             <span>5.0</span>
-            <Text classText="font-light tracking-wide mt-4">Ruang Laboratorium Fisika</Text>
+            <Text classText="font-extralight tracking-wide mt-4">Ruang Laboratorium Fisika</Text>
             <span className="mr-3">
               <StarRatings
                 rating={5}
@@ -129,7 +129,7 @@ export default function Detail() {
               />
             </span>
             <span>5.0</span>
-            <Text classText="font-light tracking-wide mt-4">Masjid Darul Irfan</Text>
+            <Text classText="font-extralight tracking-wide mt-4">Masjid Darul Irfan</Text>
             <span className="mr-3">
               <StarRatings
                 rating={5}
@@ -139,8 +139,8 @@ export default function Detail() {
             </span>
             <span>5.0</span>
 
-            <h1 className="mt-8 mb-5">Ekskul</h1>
-            <Text classText="font-light tracking-wide">Pramuka</Text>
+            <h1 className="hp:mt-10 tablet:mt-8 hp:mb-5">Ekskul</h1>
+            <Text classText="font-extralight tracking-wide">Pramuka</Text>
             <span className="mr-3">
               <StarRatings
                 rating={5}
@@ -149,7 +149,7 @@ export default function Detail() {
               />
             </span>
             <span>5.0</span>
-            <Text classText="font-light tracking-wide mt-4">Futsal</Text>
+            <Text classText="font-extralight tracking-wide mt-4">Futsal</Text>
             <span className="mr-3">
               <StarRatings
                 rating={5}
@@ -158,7 +158,7 @@ export default function Detail() {
               />
             </span>
             <span>5.0</span>
-            <Text classText="font-light tracking-wide mt-4">Masjid Darul Irfan</Text>
+            <Text classText="font-extralight tracking-wide mt-4">Masjid Darul Irfan</Text>
             <span className="mr-3">
               <StarRatings
                 rating={5}
@@ -183,7 +183,7 @@ export default function Detail() {
             <div className="overflow-hidden shadow-xl rounded-lg h-auto p-10">
               {(staticReviewSchools || []).map(review => (
                 <div key={review.id}>
-                  <span className="ml-6 mr-3">
+                  <span className="hp:ml-0 tablet:ml-6 mr-3">
                     <StarRatings
                       rating={review.rate}
                       starDimension="20px"
@@ -191,10 +191,10 @@ export default function Detail() {
                     />
                   </span>
                   <span>{review.rate.toFixed(1)}</span>
-                  <span className="float-right mr-6 text-md font-extralight tracking-wide">Ditulis tanggal, {review.date}</span>
+                  <span className="float-right mr-6 hp:my-3 tablet:my-0 hp:text-sm tablet:text-md font-extralight tracking-wide">Ditulis tanggal, {review.date}</span>
                   <Text classText="
                     text-sm
-                    mx-6
+                    hp:mx-0 tablet:mx-6
                     font-medium
                     mt-1
                   ">
@@ -203,14 +203,14 @@ export default function Detail() {
                   <Text classText="
                     hp:mb-6 laptop:mb-8
                     text-sm
-                    mx-6
+                    hp:mx-0 tablet:mx-6
                     mt-1
                     font-light
                   ">
                     <span><Image alt="recommend" classWrap="inline-block mr-2" src={review.recommend ? require('../../assets/icons/like.svg') : require('../../assets/icons/dislike.svg')} /></span> {review.recommend ? 'Direkomendasikan' : 'Tidak Direkomendasikan'}
                   </Text>
                   <Text classText="
-                    mx-6
+                    hp:mx-0 tablet:mx-6
                     text-md
                     text-primary
                     font-light
