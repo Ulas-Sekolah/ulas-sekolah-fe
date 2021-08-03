@@ -41,12 +41,13 @@ export default function Detail() {
 
   return (
     <>
-      <Button classButton="
-        hp:mx-10 laptop:mx-24
-        mt-3 hp:mt-3 tablet:mt-5 laptop:mt-20
-        bg-blue-200 py-1.5 px-5 rounded-lg flex items-center my-4
-      "
-      onClick={() => router.back()}
+      <Button
+        classButton="
+          hp:mx-10 laptop:mx-24
+          mt-3 hp:mt-3 tablet:mt-5 laptop:mt-20
+          bg-blue-200 py-1.5 px-5 rounded-lg flex items-center my-4
+        "
+        onClick={() => router.back()}
       >
         <Image
           src={require('../../assets/icons/arrow-white.svg')}

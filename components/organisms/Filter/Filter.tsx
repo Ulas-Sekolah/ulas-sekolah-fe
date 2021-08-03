@@ -41,6 +41,20 @@ export default function Footer() {
       </label>
       <label>
         <Text classText="font-medium mb-2 mt-4">
+          Kategori Sekolah
+        </Text>
+        <div className="border-gray border-4 p-2 rounded-lg">
+          <select {...register("levelSchool")} defaultValue="" placeholder="Pilih Kategori" className="focus:outline-none cursor-pointer w-full font-medium opacity-30 font-medium">
+            {([{value: '', label: 'Select All'}, {value: 'negeri', label: 'Negeri'}, {value: 'swasta', label: 'Swasta'}] || []).map(kategoryOption => (
+              <option key={kategoryOption.value} value={kategoryOption.value}>
+                {kategoryOption.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      </label>
+      <label>
+        <Text classText="font-medium mb-2 mt-4">
           Provinsi
         </Text>
         <div className="border-gray border-4 p-2 rounded-lg">
