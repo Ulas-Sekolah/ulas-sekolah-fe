@@ -227,6 +227,36 @@ export default function Detail() {
           </div>
         </div>
       </div>
+      
+      <Button classButton="
+        float-right
+        hp:mx-10 laptop:mx-24
+        my-3 hp:my-3 tablet:my-5 laptop:my-10
+        bg-blue-200 py-1.5 px-5 rounded-lg flex items-center my-4
+      "
+      onClick={() => null}
+      >
+        <span className="text-white font-medium">Tulis Ulasan</span>
+        <Image
+          src={require('../../assets/icons/arrow-white.svg')}
+          alt="arrow-white"
+          classImage="
+            w-3 lg:w-4
+            h-3 lg:h-4
+          "
+          classWrap="
+            flex
+            col-end-2
+            col-start-1
+            transform
+            -rotate-90
+            justify-center
+            align-center
+            ml-3
+          "
+        />
+      </Button>
+      
       <Footer />
     </>
   )

@@ -5,6 +5,7 @@ import { Button, Image } from '../../../components/atoms'
 export default function Footer() {
   return (
     <footer className="
+      clear-both
       mt-24 hp:px-10 laptop:px-24 py-16 w-100 bg-gray
       grid hp:grid-cols-1 laptop:grid-cols-3
       hp:gap-16 laptop:gap-x-36 laptop:gap-y-20
