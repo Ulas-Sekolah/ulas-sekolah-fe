@@ -5,7 +5,7 @@ import { Image, Switch } from '../../atoms'
 
 export default function Navbar(): any {
   const router = useRouter()
-  const [navbarOpen, setNavbarOpen] = React.useState(false)
+  const [navbarOpen, setNavbarOpen] = React.useState<boolean>(false)
   const menu = [{
     name: '/',
     displayName: 'Beranda'
@@ -58,9 +58,9 @@ export default function Navbar(): any {
             }
             id="example-navbar-danger"
           >
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+            <ul className="flex flex-col items-center lg:flex-row list-none lg:ml-auto">
               {(menu || []).map((item, idx, arr) => (
-                <li key={idx} className={`cursor-pointer ${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
+                <li key={idx} className={`cursor-pointer flex items-center ${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? "font-light" : "font-extralight"}`}>
                   {item.name !== 'switch-btn' ?
                     <Link href={item.name}>
                       {item.displayName}

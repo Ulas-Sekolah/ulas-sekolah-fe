@@ -6,7 +6,7 @@ import { Pagination } from '../../components/molecules'
 import { Navbar, Footer, Filter} from '../../components/organisms'
 
 export default function Review() {
-  const [state, setState] = useState({
+  const [state, setState] = useState<any>({
     dataSchool: [{
       id: 1,
       schoolName: 'SMK NEGERI 26 JAKARTA',

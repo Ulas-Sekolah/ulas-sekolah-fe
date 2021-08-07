@@ -11,7 +11,7 @@ export default function Slider({
   images,
 }: PropSliderTypes): any {
   const timer: { current: NodeJS.Timeout | null } = React.useRef(null)
-  const [pause, setPause] = React.useState(false)
+  const [pause, setPause] = React.useState<boolean>(false)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
     duration: 1000,
