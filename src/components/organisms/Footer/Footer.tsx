@@ -1,6 +1,6 @@
 import React from 'react'
 import { SubHeading, Text } from '../../atoms'
-import { Button, Image } from '../../../components/atoms'
+import { Button, Image } from '../../atoms'
 
 export default function Footer() {
   return (
