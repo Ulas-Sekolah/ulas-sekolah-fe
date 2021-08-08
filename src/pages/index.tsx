@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import Homepage from '../containers/pages/Homepage'
+import Layout from 'components/Layout'
+import Homepage from 'containers/pages/Homepage'
 
 export default function Home() {
   return (

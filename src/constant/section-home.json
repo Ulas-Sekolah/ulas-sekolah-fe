@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Jelajahi semua sekolah di Indonesia",
+    "desc": "Cari sekolah yang kamu minati dan dapatkan info rating, jurusan, ekskul dan fasilitas sekolah favoritmu.",
+    "imageUrl": "/assets/images/rating-school.png"
+  },
+  {
+    "title": "Mencari jurusan sesuai dengan passionmu",
+    "desc": "Cari sekolah favorit terbaik di Indonesia untuk jurusan favoritmu dengan mudah dengan menggunakan Rating Sekolah.",
+    "imageUrl": "/assets/images/your-passion.png"
+  },
+  {
+    "title": "Mengembangkan hobi di sekolah favoritmu",
+    "desc": "Pilih sekolah dengan ekskul sesuai minat kamu dan cari teman sehobi di sekolah favorit kamu!",
+    "imageUrl": "/assets/images/your-extracurricular.png"
+  },
+  {
+    "title": "Mendapatkan fasilitas yang baik dan lengkap",
+    "desc": "Dengan mendapatkan fasilitas yang layak dan lengkap pasti kamu akan lebih semangat dalam proses belajar.",
+    "imageUrl": "/assets/images/facilities.png"
+  }
+]

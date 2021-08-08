@@ -18,7 +18,7 @@ export default function Button({
   return (
     <React.Fragment>
       <div className={classWrap}>
-        <button type="submit" data-text={dataText} className={`focus:outline-none ${classButton}`} onClick={onClick}>{children}</button>
+        <button type='submit' data-text={dataText} className={`focus:outline-none ${classButton}`} onClick={onClick}>{children}</button>
       </div>
     </React.Fragment>
   )

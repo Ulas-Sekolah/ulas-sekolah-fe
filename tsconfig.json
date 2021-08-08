@@ -23,8 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "./jest-setup.ts"
-, "__test__/components/Layout.spec.js", "__test__/components/Layout.test.tsx", "__test__/components/Hidden.test.ts", "babel.config.js", "jest.config.js", "__test__/components/Kirik.test.tsx", "src/atoms/SubHeading.test.tsx"  ],
+    "./jest-setup.ts",
+    "__test__/components/Layout.spec.js", "__test__/components/Layout.test.tsx", "__test__/components/Hidden.test.ts", "babel.config.js", "jest.config.js", "__test__/components/Kirik.test.tsx", "src/__test__/components/atoms/SubHeading.test.tsx"  ],
   "exclude": [
     "node_modules"
   ],

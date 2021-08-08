@@ -1,7 +1,7 @@
 import React from 'react'
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
-import { Image } from '../../atoms'
+import { Image } from 'components/atoms'
 
 interface PropSliderTypes {
   images: any[]
@@ -24,10 +24,10 @@ export default function Slider({
   })
   
   React.useEffect(() => {
-    sliderRef.current.addEventListener("mouseover", () => {
+    sliderRef.current.addEventListener('mouseover', () => {
       setPause(true)
     })
-    sliderRef.current.addEventListener("mouseout", () => {
+    sliderRef.current.addEventListener('mouseout', () => {
       setPause(false)
     })
   }, [sliderRef])
@@ -44,9 +44,9 @@ export default function Slider({
   }, [pause, slider])
 
   return (
-    <div ref={sliderRef} className="keen-slider">
+    <div ref={sliderRef} className='keen-slider'>
       {(images || []).map(dataImg => (
-        <Image key={dataImg.id} classWrap="keen-slider__slide" classImage="mx-auto object-cover h-60 w-full" src={dataImg.imgThumb} alt="img-slider"/>
+        <Image key={dataImg.id} height={150} width={400} layout='responsive' classWrap='keen-slider__slide' classImage='mx-auto object-cover h-60 w-full' src={dataImg.imgThumb} alt='img-slider'/>
       ))}
     </div>
   )
