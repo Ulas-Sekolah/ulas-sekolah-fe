@@ -9,8 +9,10 @@ module.exports = {
         'gray': '#F7FAFC',
         'gray-100': '#E5E5E5',
         'gray-200': '#C4C4C4',
+        'gray-300': '#D4D5E0',
         'blue-100': '#D4EFF6',
         'blue-200': '#4FD5F8',
+        'blue-300': '#10143B',
       }),
       textColor: theme => ({
         ...theme('colors'),
@@ -18,8 +20,10 @@ module.exports = {
         'gray': '#F7FAFC',
         'gray-100': '#E5E5E5',
         'gray-200': '#C4C4C4',
+        'gray-300': '#D4D5E0',
         'blue-100': '#D4EFF6',
         'blue-200': '#4FD5F8',
+        'blue-300': '#10143B',
       }),
       gradientColorStops: theme => ({
         ...theme('colors'),
@@ -28,8 +32,10 @@ module.exports = {
         'gray': '#F7FAFC',
         'gray-100': '#E5E5E5',
         'gray-200': '#C4C4C4',
+        'gray-300': '#D4D5E0',
         'blue-100': '#D4EFF6',
         'blue-200': '#4FD5F8',
+        'blue-300': '#10143B',
        }),
       boxShadow: theme => ({
         ...theme('colors'),
@@ -42,8 +48,10 @@ module.exports = {
         'gray': '#F7FAFC',
         'gray-100': '#E5E5E5',
         'gray-200': '#C4C4C4',
+        'gray-300': '#D4D5E0',
         'blue-100': '#D4EFF6',
         'blue-200': '#4FD5F8',
+        'blue-300': '#10143B',
        }),
       screens: {
         'hp': '0',

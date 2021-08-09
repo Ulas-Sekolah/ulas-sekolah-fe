@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import StarRatings from 'react-star-ratings'
+import { useStore } from 'provider'
 import { Image, Text } from 'components/atoms'
 import { Pagination } from 'components/molecules'
 import { Navbar, Footer, Filter} from 'components/organisms'
 
 export default function Review() {
+  const { drakMode } = useStore()
   const [state, setState] = useState<any>({
     dataSchool: [{
       id: 1,
@@ -64,7 +66,7 @@ export default function Review() {
 
   return (
     <React.Fragment>
-      <header className='bg-gray rounded z-50 m-3 hp:h-72 laptop:h-56 py-4'>
+      <header className={`${drakMode ? 'bg-blue-300' : 'bg-gray'} transition rounded z-50 hp:h-72 laptop:h-56 py-4`}>
         <Navbar />
       </header>
 
@@ -144,11 +146,12 @@ export default function Review() {
             <Pagination />
           </div>
         </div>
-        <div className='
+        <div className={`
           hp:h-56 laptop:h-96
           hp:top-72 laptop:top-48
-          py-4 mx-3 left-0 right-0 bg-gray absolute
-        '/>
+          py-4 mx-3 left-0 right-0 absolute
+          ${drakMode ? 'bg-blue-300' : 'bg-gray'}
+        `}/>
       </section>
 
       <Footer />

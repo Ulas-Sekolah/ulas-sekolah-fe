@@ -5,8 +5,10 @@ const AppContext = createContext()
 
 // Init Provider
 export function AppWrapper({ children }) {
+  const [drakMode, setDrakMode] = useState(false)
+
   return (
-    <AppContext.Provider>
+    <AppContext.Provider value={{ drakMode, setDrakMode }}>
       {children}
     </AppContext.Provider>
   )

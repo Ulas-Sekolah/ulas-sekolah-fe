@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Image, Input } from 'components/atoms'
 import { Navbar, Footer } from 'components/organisms'
-import sections from 'constant/section-home.json';
+import sections from 'constant/section-home.json'
+import { useStore } from 'provider'
 
 const staticSchool: any[] = [{
   id: 1,
@@ -36,9 +37,11 @@ const staticSchool: any[] = [{
 }]
 
 export default function Homepage() {
+  const { drakMode } = useStore()
+
   return (
     <React.Fragment>
-      <header className='bg-gray rounded m-3 py-4'>
+      <header className={`${drakMode ? 'bg-blue-300' : 'bg-gray'} transition rounded py-4`}>
         <Navbar />
         <div className='
           mx-10 hp:mx-10 laptop:mx-24
@@ -47,19 +50,20 @@ export default function Homepage() {
           grid grid-cols-1 hp:grid-cols-1 laptop:grid-cols-2
         '>
           <div className='hp:mb-20 laptop:mb-48'>
-            <h1 className='
+            <h1 className={`
+              transition
               leading-snug
-              text-primary
               font-semibold
               m-auto tablet: m-0
               tablet:w-3/4 laptop:w-full
+              ${drakMode ? 'text-gray-300' : 'text-primary'}
               text-3xl hp:text-3xl tablet:text-4xl laptop:text-6xl
               text-center hp:text-center tablet:text-center laptop:text-left
-            '>
+            `}>
               Jelajahi semua sekolah di Indonesia
             </h1>
-            <p className='
-              text-primary
+            <p className={`
+              transition
               tracking-wider
               font-extralight
               leading-relaxed
@@ -67,16 +71,17 @@ export default function Homepage() {
               tablet:w-3/4 laptop:w-full
               mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
               text-sm hp:text-sm tablet:text-md laptop:text-lg
+              ${drakMode ? 'text-gray-300' : 'text-primary'}
               text-center hp:text-center tablet:text-center laptop:text-left
-            '>
+            `}>
               Cari sekolah yang kamu minati dan dapatkan info rating, jurusan, ekskul dan fasilitas sekolah favoritmu.
             </p>
-            <div className='
+            <div className={`
               grid
               pr-2.5
-              bg-white
               relative
               shadow-sm
+              transition
               rounded-full
               grid-cols-12
               items-center
@@ -86,7 +91,8 @@ export default function Homepage() {
               m-auto tablet: m-0
               tablet:w-3/4 laptop:w-full
               mt-5 hp:mt-5 tablet:mt-7 laptop:mt-10
-            '>
+              ${drakMode ? 'bg-gray-300' : 'bg-white'}
+            `}>
               <Image
                 src='/assets/icons/message.svg'
                 alt='Message Image'
@@ -97,8 +103,8 @@ export default function Homepage() {
                   col-start-1
                   animate-pulse
                 '
-                height='auto'
-                width='auto'
+                height={20}
+                width={20}
               />
               <Input
                 type='text'
@@ -106,35 +112,38 @@ export default function Homepage() {
                   col-start-2
                   col-end-10
                 '
-                classInput='
+                classInput={`
                   w-full
-                  h-10 laptop:h-14
+                  transition
                   font-extralight
+                  h-10 laptop:h-14
                   text-xs tablet:text-md laptop:text-lg
-                '
+                  ${drakMode ? 'bg-gray-300' : 'bg-white'}
+                `}
                 placeholder='Masukan emailmu'
               />
               <Button
                 onClick={() => null}
-                classWrap='
+                classWrap={`
                   w-full
                   transition
                   col-end-13
-                  bg-primary
                   h-7 lg:h-10
                   duration-300
                   col-start-10
                   rounded-full
-                  hover:ring-4 ring-gray-400
-                '
-                classButton='
+                  hover:ring-4
+                  ${drakMode ? 'bg-blue-300 ring-blue-900' : 'bg-primary ring-gray-400'}
+                `}
+                classButton={`
                   w-full
-                  text-white
+                  transition
                   text-center
-                  h-7 laptop:h-10
                   font-medium
+                  h-7 laptop:h-10
+                  ${drakMode ? 'text-gray-300' : 'text-white'}
                   text-xs hp:text-xs tablet:text-sm laptop:text-lg
-                '
+                `}
               >
                 <span>Ulasan</span>
               </Button>
@@ -144,8 +153,8 @@ export default function Homepage() {
             relative
             hp:hidden laptop:block
           '>
-            <div className='absolute border-blue-100 border-2 h-96 w-60 right-0 rounded' />
-            <Image src='/assets/images/banner-header.png' alt='banner' width={500} height={600} layout='fixed' classWrap='absolute top-16 right-16' classImage='absolute p-10 right-0' />
+            <div className={`${drakMode ? 'border-gray-300' : 'border-blue-100'} absolute border-2 h-96 w-60 right-0 rounded`} />
+            <Image src='/assets/images/banner-header.png' alt='banner' width={450} height={600} layout='fixed' classWrap={`absolute top-16 right-16 rounded ${drakMode ? 'border-gray-300 border-2' : ''}`} classImage={`${drakMode ? 'border-blue-100 border-2' : ''} absolute p-10 right-0`} />
           </div>
         </div>
       </header>
