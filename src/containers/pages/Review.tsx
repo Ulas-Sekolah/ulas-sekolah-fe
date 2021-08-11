@@ -71,22 +71,9 @@ export default function Review() {
       </header>
 
       <section>
-        <div className='
-          grid
-          hp:gap-10 table:gap-20
-          mx-8 hp:mx-8 laptop:mx-24
-          hp:grid-flow-row laptop:grid-flow-col gap-4
-          grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
-        '>
+        <div className='grid hp:gap-10 table:gap-20 mx-8 hp:mx-8 laptop:mx-24 hp:grid-flow-row laptop:grid-flow-col gap-4 grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2'>
           <Filter />
-          <div className='
-            p-8
-            z-50
-            bg-white
-            shadow-xl
-            rounded-lg
-            hp:col-span-1 laptop:col-span-12
-          '>
+          <div className='p-8 z-50 bg-white shadow-xl rounded-lg hp:col-span-1 laptop:col-span-12'>
             {(state.dataSchool || []).map((data, idx) => (
               <div key={data.id}>
                 <div
@@ -102,27 +89,14 @@ export default function Review() {
                     width={10}
                   />
                   <Text classText='font-medium'>{data.schoolName}</Text>
-                  <Text classText='
-                    hp:mb-6 laptop:mb-8
-                    text-sm
-                    text-gray-200
-                  '>
+                  <Text classText='hp:mb-6 laptop:mb-8 text-sm text-gray-200'>
                     {data.address}
                   </Text>
-                  <div className='
-                    grid
-                    hp:grid-cols-1 laptop:grid-cols-3
-                  '>
-                    <Text classText='
-                      text-sm
-                      hp:mb-2 laptop:mb-8
-                    '>
+                  <div className='grid hp:grid-cols-1 laptop:grid-cols-3'>
+                    <Text classText='text-sm hp:mb-2 laptop:mb-8'>
                       {`Provinsi: ${data.province}`}
                     </Text>
-                    <Text classText='
-                      text-sm
-                      hp:mb-2 laptop:mb-8
-                    '>
+                    <Text classText='text-sm hp:mb-2 laptop:mb-8'>
                       {`Kota/Kab: ${data.city}`}
                     </Text>
                     <StarRatings
@@ -146,13 +120,7 @@ export default function Review() {
             <Pagination />
           </div>
         </div>
-        <div className={`
-          transition
-          hp:h-56 laptop:h-96
-          hp:top-72 laptop:top-48
-          py-4 mx-3 left-0 right-0 absolute
-          ${drakMode ? 'bg-black' : 'bg-gray'}
-        `}/>
+        <div className={`transition hp:h-56 laptop:h-96 hp:top-72 laptop:top-48 py-4 mx-3 left-0 right-0 absolute ${drakMode ? 'bg-black' : 'bg-gray'}`}/>
       </section>
 
       <Footer />

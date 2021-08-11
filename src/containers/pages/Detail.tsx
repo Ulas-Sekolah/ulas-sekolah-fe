@@ -44,11 +44,7 @@ export default function Detail() {
   return (
     <>
       <Button
-        classButton='
-          hp:mx-10 laptop:mx-24
-          mt-3 hp:mt-3 tablet:mt-5 laptop:mt-20
-          bg-blue-200 py-1.5 px-5 rounded-lg flex items-center my-4
-        '
+        classButton='hp:mx-10 laptop:mx-24 mt-3 hp:mt-3 tablet:mt-5 laptop:mt-20 bg-blue-200 py-1.5 px-5 rounded-lg flex items-center my-4'
         onClick={() => router.back()}
       >
         <Image
@@ -63,17 +59,9 @@ export default function Detail() {
         <span className='text-white font-medium'>Kembali</span>
       </Button>
 
-      <div className='
-        hp:mx-10 laptop:mx-24
-        mt-10 hp:mt-10 laptop:mt-28
-      '>
+      <div className='hp:mx-10 laptop:mx-24 mt-10 hp:mt-10 laptop:mt-28'>
         <h1 className={`text-xl hp:text-xl text-3xl font-semibold ${drakMode ? 'text-white' : 'text-black'}`}>SMAN 8 JAKARTA</h1>
-        <div className='
-          grid
-          hp:gap-10 table:gap-20
-          hp:grid-flow-row laptop:grid-flow-col gap-2
-          grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
-        '>
+        <div className='grid hp:gap-10 table:gap-20 hp:grid-flow-row laptop:grid-flow-col gap-2 grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2'>
           <div className='p-4 shadow-xl rounded-lg mt-8 flex flex-col justify-center h-60 bg-white'>
             <p className='text-8xl font-bold flex justify-center text-black'>A</p>
             <p className='text-2xl font-semibold flex justify-center text-black'>Akreditasi</p>
@@ -93,16 +81,8 @@ export default function Detail() {
         </div>
       </div>
 
-      <div className='
-        hp:mx-10 laptop:mx-24
-        mt-3 hp:mt-3 tablet:mt-5 laptop:mt-20
-      '>
-        <div className='
-          grid
-          hp:gap-10 table:gap-20
-          hp:grid-flow-row laptop:grid-flow-col gap-2
-          grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
-        '>
+      <div className='hp:mx-10 laptop:mx-24 mt-3 hp:mt-3 tablet:mt-5 laptop:mt-20'>
+        <div className='grid hp:gap-10 table:gap-20 hp:grid-flow-row laptop:grid-flow-col gap-2 grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2'>
           <div className={`${drakMode ? 'text-white' : 'text-black'}`}>
             <h1 className='hp:mt-10 tablet:mt-0 hp:mb-5 tablet:mt-0'>Fasilitas</h1>
             <Text classText='font-extralight tracking-wide'>Ruang Laboratorium Biologi</Text>
@@ -186,29 +166,13 @@ export default function Detail() {
                   </span>
                   <span>{review.rate.toFixed(1)}</span>
                   <span className='float-right mr-6 hp:my-3 tablet:my-0 hp:text-sm tablet:text-md font-extralight tracking-wide'>Ditulis tanggal, {review.date}</span>
-                  <Text classText='
-                    text-sm
-                    hp:mx-0 tablet:mx-6
-                    font-medium
-                    mt-1
-                  '>
+                  <Text classText='text-sm hp:mx-0 tablet:mx-6 font-medium mt-1'>
                     <span className='text-gray-200 font-normal'>oleh</span> Alumni <span className='text-gray-200 font-normal'>tahun</span> 2019
                   </Text>
-                  <Text classText='
-                    hp:mb-6 laptop:mb-8
-                    text-sm
-                    hp:mx-0 tablet:mx-6
-                    mt-1
-                    font-light
-                  '>
+                  <Text classText='hp:mb-6 laptop:mb-8 text-sm hp:mx-0 tablet:mx-6 mt-1 font-light'>
                     <span><Image alt='recommend' classWrap='inline-block mr-2' height={15} width={15} layout='fixed' src={review.recommend ? '/assets/icons/like.svg' : '/assets/icons/dislike.svg'} /></span> {review.recommend ? 'Direkomendasikan' : 'Tidak Direkomendasikan'}
                   </Text>
-                  <Text classText='
-                    hp:mx-0 tablet:mx-6
-                    text-md
-                    text-primary
-                    font-light
-                  '>
+                  <Text classText='hp:mx-0 tablet:mx-6 text-md text-primary font-light'>
                     {review.review}
                   </Text>
                   <div className='my-4'>
@@ -222,13 +186,9 @@ export default function Detail() {
         </div>
       </div>
       
-      <Button classButton='
-        float-right
-        hp:mx-10 laptop:mx-24
-        my-3 hp:my-3 tablet:my-5 laptop:my-10
-        bg-blue-200 py-1.5 px-5 rounded-lg flex items-center my-4
-      '
-      onClick={() => null}
+      <Button
+        classButton='float-right hp:mx-10 laptop:mx-24 my-3 hp:my-3 tablet:my-5 laptop:my-10 bg-blue-200 py-1.5 px-5 rounded-lg flex items-center my-4'
+        onClick={() => null}
       >
         <span className='text-white font-medium'>Tulis Ulasan</span>
         <Image
