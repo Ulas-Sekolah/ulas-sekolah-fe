@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useStore } from 'provider'
+import { useStore, useWindowSize } from 'provider'
 import { Image, Switch } from 'components/atoms'
 
 export default function Navbar(): any {
   const [navbarOpen, setNavbarOpen] = React.useState<boolean>(false)
   const { drakMode } = useStore()
+  const { width } = useWindowSize()
   const router = useRouter()
   const menu = [{
     name: '/',
@@ -30,10 +31,10 @@ export default function Navbar(): any {
       flex
       shadow-sm
       transition
+      bg-white
       py-3 px-10
       justify-between
       mx-5 hp:mx-5 tablet:mx-10 laptop:mx-24
-      ${drakMode ? 'bg-gray-300' : 'bg-white'}
       ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`
     }>
       <div className='relative flex flex-wrap items-center justify-between bg-teal-500 w-full'>
@@ -60,7 +61,7 @@ export default function Navbar(): any {
             }
             id='example-navbar-danger'
           >
-            <ul className={`flex flex-col items-center lg:flex-row list-none lg:ml-auto transition ${drakMode ? 'text-black' : 'text-primary'}`}>
+            <ul className={`flex flex-col lg:flex-row list-none lg:ml-auto transition ${width <= 1024 ? '' : 'items-center'} ${drakMode ? 'text-black' : 'text-primary'}`}>
               {(menu || []).map((item, idx, arr) => (
                 <li key={idx} className={`cursor-pointer flex items-center ${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? 'font-light' : 'font-extralight'}`}>
                   {item.name !== 'switch-btn' ?

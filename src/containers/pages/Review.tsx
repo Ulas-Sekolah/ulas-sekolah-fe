@@ -66,7 +66,7 @@ export default function Review() {
 
   return (
     <React.Fragment>
-      <header className={`${drakMode ? 'bg-blue-300' : 'bg-gray'} transition rounded z-50 hp:h-72 laptop:h-56 py-4`}>
+      <header className={`${drakMode ? 'bg-black' : 'bg-gray'} transition rounded z-50 hp:h-72 laptop:h-56 py-4`}>
         <Navbar />
       </header>
 
@@ -147,10 +147,11 @@ export default function Review() {
           </div>
         </div>
         <div className={`
+          transition
           hp:h-56 laptop:h-96
           hp:top-72 laptop:top-48
           py-4 mx-3 left-0 right-0 absolute
-          ${drakMode ? 'bg-blue-300' : 'bg-gray'}
+          ${drakMode ? 'bg-black' : 'bg-gray'}
         `}/>
       </section>
 

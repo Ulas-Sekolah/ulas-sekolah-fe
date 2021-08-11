@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Image, Input } from 'components/atoms'
 import { Navbar, Footer } from 'components/organisms'
 import sections from 'constant/section-home.json'
-import { useStore } from 'provider'
+import { useStore, useWindowSize } from 'provider'
 
 const staticSchool: any[] = [{
   id: 1,
@@ -38,10 +38,12 @@ const staticSchool: any[] = [{
 
 export default function Homepage() {
   const { drakMode } = useStore()
+  const { width } = useWindowSize()
+  const isMobile = width < 768
 
   return (
     <React.Fragment>
-      <header className={`${drakMode ? 'bg-blue-300' : 'bg-gray'} transition rounded py-4`}>
+      <header className={`${drakMode ? 'bg-black' : 'bg-gray'} transition rounded py-4`}>
         <Navbar />
         <div className='
           mx-10 hp:mx-10 laptop:mx-24
@@ -56,7 +58,7 @@ export default function Homepage() {
               font-semibold
               m-auto tablet: m-0
               tablet:w-3/4 laptop:w-full
-              ${drakMode ? 'text-gray-300' : 'text-primary'}
+              ${drakMode ? 'text-white' : 'text-primary'}
               text-3xl hp:text-3xl tablet:text-4xl laptop:text-6xl
               text-center hp:text-center tablet:text-center laptop:text-left
             `}>
@@ -71,7 +73,7 @@ export default function Homepage() {
               tablet:w-3/4 laptop:w-full
               mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7
               text-sm hp:text-sm tablet:text-md laptop:text-lg
-              ${drakMode ? 'text-gray-300' : 'text-primary'}
+              ${drakMode ? 'text-white' : 'text-primary'}
               text-center hp:text-center tablet:text-center laptop:text-left
             `}>
               Cari sekolah yang kamu minati dan dapatkan info rating, jurusan, ekskul dan fasilitas sekolah favoritmu.
@@ -91,7 +93,7 @@ export default function Homepage() {
               m-auto tablet: m-0
               tablet:w-3/4 laptop:w-full
               mt-5 hp:mt-5 tablet:mt-7 laptop:mt-10
-              ${drakMode ? 'bg-gray-300' : 'bg-white'}
+              ${drakMode ? 'bg-white' : 'bg-white'}
             `}>
               <Image
                 src='/assets/icons/message.svg'
@@ -118,7 +120,7 @@ export default function Homepage() {
                   font-extralight
                   h-10 laptop:h-14
                   text-xs tablet:text-md laptop:text-lg
-                  ${drakMode ? 'bg-gray-300' : 'bg-white'}
+                  ${drakMode ? 'bg-white placeholder-black' : 'bg-white'}
                 `}
                 placeholder='Masukan emailmu'
               />
@@ -133,15 +135,15 @@ export default function Homepage() {
                   col-start-10
                   rounded-full
                   hover:ring-4
-                  ${drakMode ? 'bg-blue-300 ring-blue-900' : 'bg-primary ring-gray-400'}
+                  ${drakMode ? 'bg-black ring-gray-700' : 'bg-primary ring-gray-300'}
                 `}
                 classButton={`
                   w-full
                   transition
+                  text-white
                   text-center
                   font-medium
                   h-7 laptop:h-10
-                  ${drakMode ? 'text-gray-300' : 'text-white'}
                   text-xs hp:text-xs tablet:text-sm laptop:text-lg
                 `}
               >
@@ -153,8 +155,8 @@ export default function Homepage() {
             relative
             hp:hidden laptop:block
           '>
-            <div className={`${drakMode ? 'border-gray-300' : 'border-blue-100'} absolute border-2 h-96 w-60 right-0 rounded`} />
-            <Image src='/assets/images/banner-header.png' alt='banner' width={450} height={600} layout='fixed' classWrap={`absolute top-16 right-16 rounded ${drakMode ? 'border-gray-300 border-2' : ''}`} classImage={`${drakMode ? 'border-blue-100 border-2' : ''} absolute p-10 right-0`} />
+            <div className={`${drakMode ? 'border-white' : 'border-blue-100'} absolute border-2 h-96 w-60 right-0 rounded`} />
+            <Image src='/assets/images/banner-header.png' alt='banner' width={450} height={600} layout='fixed' classWrap='absolute top-16 right-16' classImage={`${drakMode ? 'border-blue-100 border-2' : ''} absolute p-10 right-0`} />
           </div>
         </div>
       </header>
@@ -171,13 +173,13 @@ export default function Homepage() {
             grid-cols-1 tablet:grid-cols-2
             ${idx % 2 !== 0 ? 'tablet:flex tablet:flex-row-reverse justify-between' : ''}
           `}>
-            <div className={`relative ${idx % 2 !== 0 ? 'tablet:flex tablet:justify-end laptop:w-2/4' : ''}`}>
+            <div className={`relative ${idx % 2 !== 0 ? 'tablet:flex tablet:justify-end tablet:w-2/4' : ''}`}>
               <Image
                 src={section.imageUrl}
                 alt='Rating'
-                width={400}
-                height={300}
-                layout='fixed'
+                width={isMobile ? 'auto' : 400}
+                height={isMobile ? 'auto' : 300}
+                layout={isMobile ? 'responsive' : 'fixed'}
                 classWrap='
                   laptop:absolute
                   z-10
@@ -191,29 +193,29 @@ export default function Homepage() {
                   hp:mx-auto
                 '
               />
-              <div className={`absolute bg-gray-200 rounded-lg w-400 h-300 transform ${idx % 2 !== 0 ? '-rotate-12' : 'rotate-12'}  ml-8 hidden tablet:hidden laptop:block`} />
-              <div className={`absolute bg-gray-100 rounded-lg w-400 h-300 transform ${idx % 2 !== 0 ? '-rotate-6' : 'rotate-6'}  ml-8 hidden tablet:hidden laptop:block`} />
+              <div className={`absolute rounded-lg w-400 h-300 transform ${drakMode ? 'bg-gray-300' : 'bg-gray-200'} ${idx % 2 !== 0 ? '-rotate-12' : 'rotate-12'}  ml-8 hidden tablet:hidden laptop:block`} />
+              <div className={`absolute rounded-lg w-400 h-300 transform ${drakMode ? 'bg-gray-200' : 'bg-gray-100'} ${idx % 2 !== 0 ? '-rotate-6' : 'rotate-6'}  ml-8 hidden tablet:hidden laptop:block`} />
             </div>
-            <div className={`${idx % 2 !== 0 ? 'laptop:w-2/4' : ''}`}>
-              <h1 className='
+            <div className={`${idx % 2 !== 0 ? 'tablet:w-2/4' : ''}`}>
+              <h1 className={`
                 leading-snug
-                text-primary
                 font-semibold
                 hp:mt-10 tablet:mt-0
                 text-center tablet:text-left
                 text-3xl tablet:text-2xl laptop:text-4xl
-              '>
+                ${drakMode ? 'text-white' : 'text-primary'}
+              `}>
                 {section.title}
               </h1>
-              <p className='
+              <p className={`
                 mt-7
                 font-extralight
                 leading-relaxed
-                text-primary
                 tracking-wider
                 text-center tablet:text-left
                 text-sm tablet:text-md laptop:text-lg
-              '>
+                ${drakMode ? 'text-white' : 'text-primary'}
+              `}>
                 {section.desc}
               </p>
             </div>
@@ -227,11 +229,12 @@ export default function Homepage() {
         <div className='
           mx-10 hp:mx-10 laptop:mx-24
         '>
-          <h1 className='
-            font-semibold leading-snug text-primary text-center
+          <h1 className={`
             hp:mt-10 tablet:mt-0
+            font-semibold leading-snug text-center
             text-3xl tablet:text-2xl laptop:text-4xl
-          '>
+            ${drakMode ? 'text-white' : 'text-primary'}
+          `}>
             Sekolah paling banyak diulas
           </h1>
           <div className='grid grid-cols-2 tablet:grid-cols-3 gap-0.5 hp:mt-10 laptop:m-28 rounded-lg'>
@@ -243,7 +246,7 @@ export default function Homepage() {
                     <p className='absolute bottom-0 text-white font-extralight hidden tablet:block'>{dataSchool.address}</p>
                   </div>
                 </div>
-                <Image src={dataSchool.imageUrl} alt='Image School' width={340} height={280} layout='fixed' />
+                <Image src={dataSchool.imageUrl} alt='Image School' layout='responsive' />
               </div>
             ))}
           </div>

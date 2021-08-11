@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStore } from 'provider'
 
 interface PropSubHeading {
   classText?: string
@@ -9,5 +10,7 @@ export default function SubHeading({
   classText,
   children,
 }: PropSubHeading): any {
-  return <h5 className={`text-xl font-semibold leading-snug text-primary ${classText}`}>{children}</h5>
+  const { drakMode } = useStore()
+
+  return <h5 className={`text-xl font-semibold leading-snug ${drakMode ? 'text-white' : 'text-primary'} ${classText}`}>{children}</h5>
 }
