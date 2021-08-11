@@ -4,6 +4,7 @@ import { Button, Image, Text } from 'components/atoms'
 import { Footer} from 'components/organisms'
 import { useRouter } from 'next/router'
 import { Slider } from 'components/molecules'
+import { useStore } from 'provider'
 
 const staticSchoolImages: any[] = [{
   id: 1,
@@ -38,6 +39,7 @@ const staticReviewSchools: any[] = [{
 
 export default function Detail() {
   const router = useRouter()
+  const { drakMode } = useStore()
 
   return (
     <>
@@ -65,16 +67,16 @@ export default function Detail() {
         hp:mx-10 laptop:mx-24
         mt-10 hp:mt-10 laptop:mt-28
       '>
-        <h1 className='text-xl hp:text-xl text-3xl font-semibold'>SMAN 8 JAKARTA</h1>
+        <h1 className={`text-xl hp:text-xl text-3xl font-semibold ${drakMode ? 'text-white' : 'text-black'}`}>SMAN 8 JAKARTA</h1>
         <div className='
           grid
           hp:gap-10 table:gap-20
           hp:grid-flow-row laptop:grid-flow-col gap-2
           grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
         '>
-          <div className='p-4 shadow-xl rounded-lg mt-8 flex flex-col justify-center h-60'>
-            <p className='text-8xl font-bold flex justify-center'>A</p>
-            <p className='text-2xl font-semibold flex justify-center'>Akreditasi</p>
+          <div className='p-4 shadow-xl rounded-lg mt-8 flex flex-col justify-center h-60 bg-white'>
+            <p className='text-8xl font-bold flex justify-center text-black'>A</p>
+            <p className='text-2xl font-semibold flex justify-center text-black'>Akreditasi</p>
           </div>
           <div className='overflow-hidden shadow-xl rounded-lg mt-8 hp:col-span-1 laptop:col-span-12 h-60'>
             <Slider images={staticSchoolImages}/>
@@ -83,7 +85,7 @@ export default function Detail() {
       </div>
       
       <div>
-        <div className='hp:mx-10 laptop:mx-24 mt-20'>
+        <div className={`hp:mx-10 laptop:mx-24 mt-20 ${drakMode ? 'text-white' : 'text-black'}`}>
           <h1 className='mb-5'>Deskripsi</h1>
           <p className='font-extralight'>Sekolah Menengah Atas Negeri 8 Jakarta atau dikenal juga dengan nama SMANDEL adalah salah satu SMA Negeri di Daerah Khusus Ibu Kota Jakarta yang memiliki akreditasi A. SMA Negeri 8 Jakarta berada di Tebet, Jakarta Selatan.<br/><br/>SMA Negeri 8 Jakarta dibuka/ didirikan pada tanggal 1 Agustus 1958 di Taman Slamet Rijadi Jakarta dengan nama SMA Negeri VIII/ABC dengan Sp. Menteri P.D.K. tanggal 21 Agustus 1958 No. 26/SK/B.111.<br /><br/>Pada bulan Januari 1959 dlakukan pemindahan tempat atau gedung sekolah di SMP Negeri III Jakarta, Jl. Manggarai Utara IV/6, Manggarai Utara, Jakarta Selatan. Dan pada tanggal 30 Maret 1971 SMA Negeri 8 Jakarta berdiri di Jalan Taman Bukitduri Tebet dan diresmikan oleh Gubernur Ali Sadikin.</p>
           <h1 className='mt-10 mb-5'>Alamat</h1>
@@ -101,7 +103,7 @@ export default function Detail() {
           hp:grid-flow-row laptop:grid-flow-col gap-2
           grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2
         '>
-          <div>
+          <div className={`${drakMode ? 'text-white' : 'text-black'}`}>
             <h1 className='hp:mt-10 tablet:mt-0 hp:mb-5 tablet:mt-0'>Fasilitas</h1>
             <Text classText='font-extralight tracking-wide'>Ruang Laboratorium Biologi</Text>
             <span className='mr-3'>
@@ -161,7 +163,7 @@ export default function Detail() {
             <span>5.0</span>
           </div>
           <div className='hp:col-span-1 laptop:col-span-12'>
-            <h1 className='mb-5'>
+            <h1 className={`mb-5 ${drakMode ? 'text-white' : 'text-black'}`}>
               Semua Ulasan
               <span className='mx-3'>
                 <StarRatings
@@ -172,7 +174,7 @@ export default function Detail() {
               </span>
               5.0
             </h1>
-            <div className='overflow-hidden shadow-xl rounded-lg h-auto p-10'>
+            <div className='overflow-hidden shadow-xl rounded-lg h-auto p-10 bg-white'>
               {(staticReviewSchools || []).map(review => (
                 <div key={review.id}>
                   <span className='hp:ml-0 tablet:ml-6 mr-3'>
