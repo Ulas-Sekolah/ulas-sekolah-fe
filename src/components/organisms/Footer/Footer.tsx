@@ -7,14 +7,7 @@ export default function Footer() {
   const { drakMode } = useStore()
 
   return (
-    <footer className={`
-      rounded
-      clear-both
-      mt-24 hp:px-10 laptop:px-24 py-16 w-100
-      grid hp:grid-cols-1 laptop:grid-cols-3
-      hp:gap-16 laptop:gap-x-36 laptop:gap-y-20
-      ${drakMode ? 'bg-black' : 'bg-gray'}
-    `}>
+    <footer className={`rounded clear-both mt-24 hp:px-10 laptop:px-24 py-16 w-100 grid hp:grid-cols-1 laptop:grid-cols-3 hp:gap-16 laptop:gap-x-36 laptop:gap-y-20 ${drakMode ? 'bg-black' : 'bg-gray'}`}>
       <div>
         <SubHeading>Rating Sekolah</SubHeading>
         <Text classText={`mt-7 text-md font-extralight ${drakMode ? 'text-white' : 'text-primary'}`}>Kami hadir menciptakan fitur untuk memudahkan anak bangsa mencari sekolah favoritnya berdasarkan rating, jurusan, ekskul dan fasilitas sekolah. (<span className='text-blue-200 cursor-pointer'>selangkapnya...</span>)</Text>
@@ -42,12 +35,7 @@ export default function Footer() {
           <Image
             src='/assets/icons/graduate.svg'
             alt='Graduate Image'
-            classWrap='
-              w-4 lg:w-5
-              h-4 lg:h-5
-              col-end-2
-              col-start-1
-            '
+            classWrap='w-4 lg:w-5 h-4 lg:h-5 col-end-2 col-start-1'
           />
           <span className='text-white ml-2 font-light text-base'>Daftar</span>
         </Button>
