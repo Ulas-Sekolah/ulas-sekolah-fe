@@ -1,5 +1,4 @@
 module.exports = {
-  mode: "jit",
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -80,5 +79,9 @@ module.exports = {
       ringWidth: ['hover', 'active']
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+  plugins: [
+    "postcss-import",
+    "tailwindcss",
+    "autoprefixer"
+  ],
 }
