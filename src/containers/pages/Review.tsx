@@ -73,30 +73,30 @@ export default function Review() {
       <section>
         <div className='grid hp:gap-10 table:gap-20 mx-8 hp:mx-8 laptop:mx-24 hp:grid-flow-row laptop:grid-flow-col gap-4 grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2'>
           <Filter />
-          <div className='p-8 z-50 bg-white shadow-xl rounded-lg hp:col-span-1 laptop:col-span-12'>
+          <div className={`${drakMode ? 'bg-black border-gray-400 border-2' : 'bg-white'} p-8 z-50 shadow-xl rounded-lg hp:col-span-1 laptop:col-span-12`}>
             {(state.dataSchool || []).map((data, idx) => (
               <div key={data.id}>
                 <div
-                  className='px-4 text-md relative text-primary cursor-pointer hp:pb-8 laptop:pb-0 border-b-4 border-gray'
+                  className={`${drakMode ? 'text-white border-gray-400' : 'text-primary border-gray'} px-4 text-md relative text-primary cursor-pointer hp:pb-8 laptop:pb-0 border-b-2`}
                   onClick={() => handleShowDetail(data.id, idx)}
                   key={data.id}
                 >
                   <Image
                     classWrap={`absolute inset-y-1/2 hp:right-4 tablet:right-8 transition transform ${data.expand ? '-rotate-180' : 'rotate-0'}`}
                     alt='arrow-down'
-                    src='/assets/icons/arrow-black.svg'
+                    src={`${drakMode? '/assets/icons/arrow-white.svg' : '/assets/icons/arrow-black.svg'}`}
                     height={10}
                     width={10}
                   />
-                  <Text classText='font-medium'>{data.schoolName}</Text>
+                  <Text classText={`${drakMode ? 'text-white' : 'text-primary'} font-medium`}>{data.schoolName}</Text>
                   <Text classText='hp:mb-6 laptop:mb-8 text-sm text-gray-200'>
                     {data.address}
                   </Text>
                   <div className='grid hp:grid-cols-1 laptop:grid-cols-3'>
-                    <Text classText='text-sm hp:mb-2 laptop:mb-8'>
+                    <Text classText={`${drakMode ? 'text-white' : 'text-primary'} text-sm hp:mb-2 laptop:mb-8`}>
                       {`Provinsi: ${data.province}`}
                     </Text>
-                    <Text classText='text-sm hp:mb-2 laptop:mb-8'>
+                    <Text classText={`${drakMode ? 'text-white' : 'text-primary'} text-sm hp:mb-2 laptop:mb-8`}>
                       {`Kota/Kab: ${data.city}`}
                     </Text>
                     <StarRatings
@@ -108,7 +108,7 @@ export default function Review() {
                 </div>
 
                 <Link href='/detail'>
-                  <div className={`p-2 cursor-pointer text-center bg-blue-200 rounded-br-lg rounded-bl-lg transition transform duration-100 ${data.expand ? 'mb-8 opacity-1' : 'mb-0 opacity-0 translate-y-6'}`}>
+                  <div className={`p-2 cursor-pointer text-center rounded-br-lg rounded-bl-lg transition transform duration-100 ${drakMode ? 'bg-gray-400' : 'bg-blue-200'} ${data.expand ? 'mb-8 opacity-1' : 'mb-0 opacity-0 translate-y-6'}`}>
                     <a className='text-white font-semibold'>
                       Lihat Detail
                     </a>

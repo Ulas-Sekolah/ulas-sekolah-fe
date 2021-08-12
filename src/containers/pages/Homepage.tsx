@@ -53,9 +53,9 @@ export default function Homepage() {
             <p className={`transition tracking-wider font-extralight leading-relaxed m-auto tablet: m-0 tablet:w-3/4 laptop:w-full mt-3 hp:mt-3 tablet:mt-5 laptop:mt-7 text-sm hp:text-sm tablet:text-md laptop:text-lg ${drakMode ? 'text-white' : 'text-primary'} text-center hp:text-center tablet:text-center laptop:text-left`}>
               Cari sekolah yang kamu minati dan dapatkan info rating, jurusan, ekskul dan fasilitas sekolah favoritmu.
             </p>
-            <div className={`grid pr-2.5 relative shadow-sm transition rounded-full grid-cols-12 items-center h-10 laptop:h-14 pl-5 laptop:pl-10 gap-2 tablet:gap-4 m-auto tablet: m-0 tablet:w-3/4 laptop:w-full mt-5 hp:mt-5 tablet:mt-7 laptop:mt-10 ${drakMode ? 'bg-white' : 'bg-white'}`}>
+            <div className={`grid pr-2.5 relative shadow-sm transition rounded-full grid-cols-12 items-center h-10 laptop:h-14 pl-5 laptop:pl-10 gap-2 tablet:gap-4 m-auto tablet: m-0 tablet:w-3/4 laptop:w-full mt-5 hp:mt-5 tablet:mt-7 laptop:mt-10 ${drakMode ? 'bg-black border-gray-400 border-2' : 'bg-white'}`}>
               <Image
-                src='/assets/icons/message.svg'
+                src={drakMode ? '/assets/icons/message-white.svg' : '/assets/icons/message-black.svg'}
                 alt='Message Image'
                 classWrap='w-4 lg:w-5 h-4 lg:h-5 col-end-2 col-start-1 animate-pulse'
                 height={20}
@@ -64,13 +64,13 @@ export default function Homepage() {
               <Input
                 type='text'
                 classWrap='col-start-2 col-end-10'
-                classInput={`w-full transition font-extralight h-10 laptop:h-14 text-xs tablet:text-md laptop:text-lg ${drakMode ? 'bg-white placeholder-black' : 'bg-white'}`}
+                classInput={`w-full transition font-extralight h-10 laptop:h-12 text-xs tablet:text-md laptop:text-lg ${drakMode ? 'bg-black placeholder-white text-white' : 'bg-white'}`}
                 placeholder='Masukan emailmu'
               />
               <Button
                 onClick={() => null}
-                classWrap={`w-full transition col-end-13 h-7 lg:h-10 duration-300 col-start-10 rounded-full hover:ring-4 ${drakMode ? 'bg-black ring-gray-700' : 'bg-primary ring-gray-300'}`}
-                classButton={`w-full transition text-white text-center font-medium h-7 laptop:h-10 text-xs hp:text-xs tablet:text-sm laptop:text-lg`}
+                classWrap={`w-full transition col-end-13 h-7 lg:h-10 duration-300 col-start-10 rounded-full hover:ring-4 ${drakMode ? 'bg-gray-400 ring-gray-700' : 'bg-primary ring-gray-300'}`}
+                classButton='w-full text-white transition text-center font-medium h-7 laptop:h-10 text-xs hp:text-xs tablet:text-sm laptop:text-lg'
               >
                 <span>Ulasan</span>
               </Button>
@@ -117,7 +117,7 @@ export default function Homepage() {
 
       <section className='mt-24 tablet:mt-48 laptop:mt-96'>
         <div className='mx-10 hp:mx-10 laptop:mx-24'>
-          <h1 className={`hp:mt-10 tablet:mt-0 font-semibold leading-snug text-center text-3xl tablet:text-2xl laptop:text-4xl${drakMode ? 'text-white' : 'text-primary'}`}>
+          <h1 className={`hp:mt-10 tablet:mt-0 font-semibold leading-snug text-center text-3xl tablet:text-2xl laptop:text-4xl ${drakMode ? 'text-white' : 'text-primary'}`}>
             Sekolah paling banyak diulas
           </h1>
           <div className='grid grid-cols-2 tablet:grid-cols-3 gap-0.5 hp:mt-10 laptop:m-28 rounded-lg'>

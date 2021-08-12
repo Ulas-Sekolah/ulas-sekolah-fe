@@ -27,12 +27,12 @@ export default function Navbar(): any {
   }]
 
   return (
-    <nav className={`flex shadow-sm transition bg-white py-3 px-10 justify-between mx-5 hp:mx-5 tablet:mx-10 laptop:mx-24 ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`}>
+    <nav className={`flex shadow-sm transition py-3 px-10 justify-between mx-5 hp:mx-5 tablet:mx-10 laptop:mx-24 ${drakMode ? 'bg-black border-gray-400 border-2' : 'bg-white'} ${navbarOpen ? 'rounded-3xl' : 'rounded-full'}`}>
       <div className='relative flex flex-wrap items-center justify-between bg-teal-500 w-full'>
         <div className='md:container md:px-4 md:mx-auto w-full flex flex-wrap items-center justify-between'>
-          <div className={`${drakMode ? 'text-black' : 'text-primary'} transition w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start`}>
+          <div className='transition w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
             <a
-              className='text-sm font-semibold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-primary'
+              className={`${drakMode ? 'text-white' : 'text-primary'} text-sm font-semibold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap`}
               href='/'
             >
               Rating Sekolah
@@ -51,7 +51,7 @@ export default function Navbar(): any {
           >
             <ul className={`flex flex-col lg:flex-row list-none lg:ml-auto transition ${width <= 1024 ? '' : 'items-center'} ${drakMode ? 'text-black' : 'text-primary'}`}>
               {(menu || []).map((item, idx, arr) => (
-                <li key={idx} className={`cursor-pointer flex items-center ${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? 'font-light' : 'font-extralight'}`}>
+                <li key={idx} className={`cursor-pointer flex items-center ${drakMode ? 'text-white' : 'text-primary'} ${arr.length - 1 === idx ? '' : 'mr-10'} ${navbarOpen ? 'mb-2' : ''} ${router.asPath === item.name ? 'font-light' : 'font-extralight'}`}>
                   {item.name !== 'switch-btn' ?
                     <Link href={item.name}>
                       {item.displayName}
