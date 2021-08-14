@@ -62,9 +62,9 @@ export default function Detail() {
       <div className='hp:mx-10 laptop:mx-24 mt-10 hp:mt-10 laptop:mt-28'>
         <h1 className={`text-xl hp:text-xl text-3xl font-semibold ${drakMode ? 'text-white' : 'text-black'}`}>SMAN 8 JAKARTA</h1>
         <div className='grid hp:gap-10 table:gap-20 hp:grid-flow-row laptop:grid-flow-col gap-2 grid-cols-1 hp:grid-cols-1 tablet:grid-cols-2'>
-          <div className='p-4 shadow-xl rounded-lg mt-8 flex flex-col justify-center h-60 bg-white'>
-            <p className='text-8xl font-bold flex justify-center text-black'>A</p>
-            <p className='text-2xl font-semibold flex justify-center text-black'>Akreditasi</p>
+          <div className={`p-4 shadow-xl rounded-lg mt-8 flex flex-col justify-center h-60 ${drakMode ? 'bg-black border-gray-400 border-2' : 'bg-white'}`}>
+            <p className={`text-8xl font-bold flex justify-center ${drakMode ? 'text-white' : 'text-black'}`}>A</p>
+            <p className={`text-2xl font-semibold flex justify-center ${drakMode ? 'text-white' : 'text-black'}`}>Akreditasi</p>
           </div>
           <div className='overflow-hidden shadow-xl rounded-lg mt-8 hp:col-span-1 laptop:col-span-12 h-60'>
             <Slider images={staticSchoolImages}/>
@@ -154,9 +154,9 @@ export default function Detail() {
               </span>
               5.0
             </h1>
-            <div className='overflow-hidden shadow-xl rounded-lg h-auto p-10 bg-white'>
+            <div className={`overflow-hidden shadow-xl rounded-lg h-auto p-10 ${drakMode ? 'bg-black border-gray-400 border-2' : 'bg-white'}`}>
               {(staticReviewSchools || []).map(review => (
-                <div key={review.id}>
+                <div key={review.id} className={`${drakMode ? 'border-gray-400' : 'border-gray'} pb-4 mb-4 border-b-2`}>
                   <span className='hp:ml-0 tablet:ml-6 mr-3'>
                     <StarRatings
                       rating={review.rate}
@@ -166,18 +166,15 @@ export default function Detail() {
                   </span>
                   <span>{review.rate.toFixed(1)}</span>
                   <span className='float-right mr-6 hp:my-3 tablet:my-0 hp:text-sm tablet:text-md font-extralight tracking-wide'>Ditulis tanggal, {review.date}</span>
-                  <Text classText='text-sm hp:mx-0 tablet:mx-6 font-medium mt-1'>
+                  <Text classText={`text-sm hp:mx-0 tablet:mx-6 font-medium mt-1 ${drakMode ? 'text-white' : 'text-primary'}`}>
                     <span className='text-gray-200 font-normal'>oleh</span> Alumni <span className='text-gray-200 font-normal'>tahun</span> 2019
                   </Text>
-                  <Text classText='hp:mb-6 laptop:mb-8 text-sm hp:mx-0 tablet:mx-6 mt-1 font-light'>
+                  <Text classText={`hp:mb-6 laptop:mb-8 text-sm hp:mx-0 tablet:mx-6 mt-1 font-light ${drakMode ? 'text-white' : 'text-primary'}`}>
                     <span><Image alt='recommend' classWrap='inline-block mr-2' height={15} width={15} layout='fixed' src={review.recommend ? '/assets/icons/like.svg' : '/assets/icons/dislike.svg'} /></span> {review.recommend ? 'Direkomendasikan' : 'Tidak Direkomendasikan'}
                   </Text>
-                  <Text classText='hp:mx-0 tablet:mx-6 text-md text-primary font-light'>
+                  <Text classText={`hp:mx-0 tablet:mx-6 text-md font-light ${drakMode ? 'text-white' : 'text-primary'}`}>
                     {review.review}
                   </Text>
-                  <div className='my-4'>
-                    <hr/>
-                  </div>
                 </div>
               ))}
 
